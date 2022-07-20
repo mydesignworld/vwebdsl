@@ -1,0 +1,160 @@
+<div class="modals-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">A modal should appear in front of the current page content to provide additional information or ask
+      for a decision or required actions. Modals should disable other page functionality while it display, and remain on
+      screen until confirmed,
+      dismissed, or a required action has been taken.</p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Focused" icon="search" card="primary" animate>
+          <p class="card-text">Modals should focus a user's attention to ensure their content is addressed</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Direct" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">A modal should be direct in communicating information or asking for an action</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Helpful" icon="speedometer2" card="primary" animate>
+          <p class="card-text">A modal should appear in response to a user task or an action</p>
+        </Card>
+      </div>
+    </div>
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Preview">
+          <div class="input-wrapper mb-0">
+            <Modal id="example" title="Onboard" trigger="button" triggerTitle="Add Account" static closeIcon>
+              <Tabs id="exampleTab">
+                <Tab title="Method 1" class="fade-in">
+                  <label>Amount</label>
+                  <a-badge primary>EUR</a-badge>
+                  <a-input lines label="amount" placeholder="Enter Amount" value="999,999,999.00" />                     
+                  <div class="input-wrapper">
+                    <label>Destination Ccy</label> 
+                    <a-drop-down :options="options" defaultValue="SELECT CCY" /> 
+                  </div>                   
+                  <div class="input-wrapper">
+                    <label>Expiration</label> 
+                    <a-drop-down :options="optionstwo" defaultValue="SELECT EXPIRATION" /> 
+                  </div>                      
+                  <a-input label="Counterparty" placeholder="Enter Counterparty" />
+                </Tab>
+                <Tab title="Method 2" class="fade-in">
+                  <label>Amount</label>
+                  <a-badge primary>EUR</a-badge>
+                  <a-input lines label="amount" placeholder="Enter Amount" value="999,999,999.00" />                     
+                  <div class="input-wrapper">
+                    <label>Destination Ccy</label> 
+                    <a-drop-down :options="options" defaultValue="SELECT CCY" /> 
+                  </div>                   
+                  <div class="input-wrapper">
+                    <label>Expiration</label> 
+                    <a-drop-down :options="optionstwo" defaultValue="SELECT EXPIRATION" /> 
+                  </div>                      
+                  <a-input label="Counterparty" placeholder="Enter Counterparty" />
+                </Tab>
+              </Tabs>             
+            </Modal>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    <CardCode>
+      <textarea class="form-control" rows="3">
+<Modal id="example" title="Onboard" trigger="button" triggerTitle="Add Account" static closeIcon>
+  <p>Content goes here</p>                                                     
+</Modal>
+
+<button type="button" data-bs-toggle="modal" data-bs-target="#exampleTest" class="btn btn-primary">
+  Example
+</button>
+<div class="modal fade button" data-bs-backdrop="static" data-bs-keyboard="false" id="exampleTest"
+  tabindex="-1" aria-labelledby="exampleTestLabel" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleTestLabel">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Content goes here</p>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+</textarea>
+    </CardCode>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>trigger</code></td>
+                  <td>String</td>
+                  <td class="text-nowrap">What will be the trigger to call the modal</td>
+                  <td class="text-nowrap"><span class="text-primary">button</span>, text or link</td>
+                </tr>
+                <tr>
+                  <td><code>closeIcon</code></td>
+                  <td>Boolean</td>
+                  <td>Should the modal contain a "close icon"</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>static</code></td>
+                  <td>Boolean</td>
+                  <td>When the user click on the backgroubd overlay the modal will close. When static is set the user must take an action or click the close icon to dismiss the modal.
+                  </td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>title</code></td>
+                  <td>String</td>
+                  <td>This will be the title/header of the modal</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>
+                <tr>
+                  <td><code>triggerTitle</code></td>
+                  <td>String</td>
+                  <td>The text that will display on the trigger</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>
+                <tr>
+                  <td><code>id</code></td>
+                  <td>String</td>
+                  <td>id is <b>required</b> to identify both the modal and indicte to the trigger what modal to display.</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>                               
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+  <FooterNav prevNav="/components/drop-downs" prevTitle="Drop Downs" nextNav="/components/tables" nextTitle="Tables" />
+</div>

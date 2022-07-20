@@ -1,0 +1,38 @@
+<div class="table-scroll-view">
+  <div class="table-hold tiles">
+    <div class="table-intro d-none" @click="forceHistoryRender" id="historyUpdate">Last Updated  10:23:07</div>      
+    <Card class="table-card fade-in">
+      <Modal ref="modal" id="confirm-modal" :title="modalHeader" trigger="text" autoClose hideActions>
+        <div class="input-wrapper">
+          <div class="text-center text-success">
+            <a-icon icon="check-circle" class="action-icon display-1" />
+            <p class="mt-3">You have successfully<br/>confirmed the pledge</p>
+          </div>
+        </div>
+      </Modal>      
+        <a-table :headers="columnHeaderProgress" :rows="inProgress" hover :key="componentKeys">
+        <template v-slot:items="{ row }">         
+          <td class="text-nowrap">{{ row.date }}</td>
+          <td class="text-nowrap">{{ row.time }}</td>
+          <td class="text-nowrap text-truncate">{{ row.im_ref }}</td>
+          <td class="text-nowrap">{{ row.value_date }}</td>
+          <td class="text-nowrap">{{ row.entity }}</td> 
+          <td class="text-nowrap text-end">{{ row.account }}</td>
+          <td class="text-nowrap">{{ row.curr }}</td>
+          <td class="text-nowrap text-end total">{{ row.total }}</td>
+          <td class="text-nowrap">
+            <a-badge secondary state="caution" class="d-flex" icon-right="dash-circle" v-if="row.status === 'accepted'">Accepted</a-badge>
+            <a-badge secondary state="success" class="d-flex" icon-right="check-circle" v-if="row.status === 'confirmed'">Confirmed</a-badge>
+            <a-badge secondary state="caution" class="d-flex" icon-right="dash-circle" v-if="row.status === 'pending'">Pending</a-badge>
+          </td>
+          
+          <td class="text-nowrap text-end">{{ row.trans_type }} Creation</td> 
+          <td class="action"><a-drop-down :options="optionsInProgress" defaultValue="Select Action" size="small" class="w-100" @change="_showModal($event, 'modal-confirm-modal', row)" :disabled="row.status === 'pending' || row.status === 'confirmed' "/></td>       
+        </template>
+        <template v-slot:no-data>
+          <span>No data</span>
+        </template>
+      </a-table>
+    </Card>
+  </div>
+</div>

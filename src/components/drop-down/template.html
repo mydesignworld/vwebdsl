@@ -1,0 +1,10 @@
+<div class="select-box" @blur="_onBlur" tabIndex="-1">
+    <div class="selected-item" :class="[{ 'open' : open, 'disabled' : disabled }, _selectSize]" @click="_onSelectedClick">
+        <div class="selected-title">{{ selected }}</div>
+        <a-icon class="select-icon chevron-up" icon="chevron-up" />
+        <a-icon class="select-icon chevron-down" icon="chevron-down" />
+    </div>
+    <div class="items" :class="{ 'selecthide' : !open, 'showme' : open, 'hideme': close }">
+        <adhara-drop-down-item v-for="(option, index) in options" :key="`option-${index}-${option.id}`" :model="option" :selected="option.label === selected" :disabled="_isOptionDisabled(option)" @click="_onItemClick(option)"/>
+    </div>
+</div>

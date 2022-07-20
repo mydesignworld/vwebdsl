@@ -1,0 +1,125 @@
+<div class="tabs-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">Inputs fields enable the user to interact with and input content and data, usually to enter and edit
+      text. They use a container or area to provide a clear affordance for interaction, making these fields easily
+      discoverable in any given layout. They should be:</p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Scalable" icon="search" card="primary" animate>
+          <p class="card-text">Tabs can have as many options as possible, although from a UX perspective always try display all tabs without the user having to scroll</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Informative" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">Tabs organize content into categories to help users easily find different types of information.</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Peers" icon="speedometer2" card="primary" animate>
+          <p class="card-text">Tabs can be displayed horizontally or vertically as peers, in categories of equal importance</p>
+        </Card>
+      </div>
+    </div>
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Preview">
+          <div class="input-wrapper mb-0">
+            <Tabs id="exampleTab">
+              <Tab title="Tab One">Content for Tab One</Tab>
+              <Tab title="Tab Two">Content for Tab Two</Tab>
+              <Tab title="Tab Three">Content for Three</Tab>
+            </Tabs>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    <CardCode>
+      <textarea class="form-control" rows="3">
+<Tabs>
+  <Tab title="Tab One">Content for Tab One</Tab>
+  <Tab title="Tab Two">Content for Tab Two</Tab>
+  <Tab title="Tab Three">Content for Three</Tab>
+</Tabs>
+
+<div class="tabs">
+  <div class="nav nav-tabs" id="exampleTab">
+    <button class="nav-link active" id="tabone-tab"
+      data-bs-toggle="tab" data-bs-target="#tabone" type="button" role="tab" aria-controls="contact"
+      aria-selected="false">Tab One
+    </button>
+    <button class="nav-link" id="tabtwo-tab" data-bs-toggle="tab"
+      data-bs-target="#tabtwo" type="button" role="tab" aria-controls="contact" aria-selected="false">Tab
+      Two
+    </button>
+    <button class="nav-link" id="tabthree-tab" data-bs-toggle="tab"
+      data-bs-target="#tabthree" type="button" role="tab" aria-controls="contact" aria-selected="false">Tab
+      Three
+    </button>
+  </div>
+  <div class="tab-content" id="exampleTabContent">
+    <div class="tab-pane fade active show" id="tabone" role="tabpanel" aria-labelledby="tabone-tab">
+      Content for Tab One
+    </div>
+    <div class="tab-pane fade" id="tabtwo" role="tabpanel" aria-labelledby="tabtwo-tab">
+      Content for Tab
+      Two
+    </div>
+    <div class="tab-pane fade" id="tabthree" role="tabpanel" aria-labelledby="tabthree-tab">
+      Content for Three
+    </div>
+  </div>
+</div>
+</textarea>
+    </CardCode>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>title</code></td>
+                  <td>String</td>
+                  <td>Each tab should contain a "title".</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>
+                <tr>
+                  <td><code>id</code></td>
+                  <td>String</td>
+                  <td>id is required to identify the tab as well as indicate the content it relates too</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>
+                <tr>
+                  <td><code>sticky</code></td>
+                  <td>Boolean</td>
+                  <td>The "sticky" indicator will stick the tab navigation to the top of the page on scroll</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+  <FooterNav prevNav="/components/tables" prevTitle="Tables" nextNav="/components/animations" nextTitle="Animations" />
+</div>

@@ -1,30 +1,67 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <Navigation v-if="$route.meta.navdsl">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in" appear="appear">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
+  </Navigation>
+  <NavigationLoans v-if="$route.meta.navloans">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in" appear="appear">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
+  </NavigationLoans>
+  <NavigationMarginBlock v-if="$route.meta.marginbloc">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in" appear="appear">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
+  </NavigationMarginBlock>  
+  
+  <router-view v-slot="{ Component }" v-if="$route.meta.marginblocs">
+      <component :is="Component"></component>
+  </router-view>
+   
+  <div class="app-wrapper-icons">
+    <AdharaIcons id="adharaIcons" />
+    <Icons id="bootstrapIcons" />
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
+<script>
+  import MenuSidebar from '@/components/menu-sidebar/';
+  import Navigation from '@/components/navigation/'
+  import NavigationLoans from '@/components/navigation-loans/'
+  import NavigationMarginBlock from '@/components/navigation-margin-bloc/'
+  import Icons           from '@/assets/images/icons/bootstrap-icons.vue';
+  import AdharaIcons     from '@/assets/images/icons/adhara-icons.vue';  
+  export default {
+    name: 'App',
+    components: {
+      AdharaIcons,
+      Icons,
+      MenuSidebar,
+      Navigation,
+      NavigationLoans,
+      NavigationMarginBlock   
+    },
+  }  
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style>
+  .app-wrapper-icons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
-}
+
 </style>

@@ -1,0 +1,42 @@
+<div class="table-scroll-view">
+  <div class="table-hold tiles">
+    <Modal ref="modal" id="success-modal" title="Create IM Pledge" trigger="text" autoClose hideActions>
+      <div class="input-wrapper">
+        <div class="text-center text-success">
+          <a-icon icon="check-circle" class="action-icon display-1" />
+          <p class="mt-3">You have successfully<br/>created a request</p>
+        </div>
+      </div>
+    </Modal>    
+    <Card class="table-card fade-in">
+      <a-table :headers="columnHeaderClearing" :rows="pendingPledge" hover :key="componentKey" >
+        <template v-slot:items="{ row }">
+          <td class="d-none">
+            <Modal ref="modal" :id="row.id.toLocaleString()" :title="modalHeader" trigger="text" triggerTitle="Add Account" hideActions @saveModal="_hideModal($event, row, items)">
+              <a-badge primary size="small">GBP</a-badge>
+              <a-input lines label="amount" :id="'amtTotal-' + row.id" :value="row.total" v-model="row.total" :disabled="row.status === 'pending'" placeholder="Enter Amount" @input="amtInput($event, row)" @change="amtChange($event, row)"/>
+              <a-input label="Legal Contract" :id="'legal-' + row.id" :value="row.legal_contract" disabled />
+              <a-input label="From" :id="'fromaccount-' + row.id" :value="row.account" disabled />
+              <a-input label="To" :id="'toaccount-' + row.id" :value="row.account_to" disabled />
+              <a-input label="IM Reference" :id="'imref-' + row.id" :value="row.im_ref" v-model="row.im_ref" placeholder="Enter IM Reference" />
+              <div class="button-hold">
+                <!-- <a-button primary data-bs-dismiss="modal" :disabled="!row.im_ref || !row.total" aria-label="Close" @click="_hideModal($event, row, items)">Create</a-button> -->
+                <a-button primary data-bs-dismiss="modal" aria-label="Close" :disabled="!row.im_ref || !row.total" @click="_hideModal($event, row, items)">Create</a-button>
+                <a-button data-bs-dismiss="modal">Cancel</a-button>
+              </div>
+            </Modal>
+          </td>
+          <td class="text-nowrap">{{ row.entity }}</td>
+          <td class="text-nowrap text-end">{{ row.account }}</td> 
+          <td class="text-nowrap">{{ row.curr }}</td>  
+          <td class="text-nowrap text-end">{{ row.on_hold_set }}</td>  
+          <td class="text-nowrap text-end">{{ row.pledged }}</td>  
+          <td class="text-nowrap text-end">{{ row.trans_type }}</td> 
+        </template>
+        <template v-slot:no-data>
+          <span>No data</span>
+        </template>
+      </a-table>
+    </Card>
+  </div>
+</div>

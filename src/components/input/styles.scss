@@ -1,0 +1,193 @@
+.input-wrapper {
+    position: relative;
+    margin: 0 10px 24px 0;
+}
+
+.input-wrapper.wrap-title {
+    margin-bottom: 34px;
+}
+
+.form-control {
+    height: 41px;
+    margin: .2rem .4rem .2rem 0;
+    padding: 10px 24px;
+    padding-top: 11px;
+    border: 1px solid var(--form-label-color);
+    border-radius: 20px;
+    outline: none;
+    color: var(--body-color);
+    font-size: var(--font-size-8);
+    text-transform: uppercase;
+    background-color: var(--input-bg);
+}
+
+/* Hide Stepper on input number - Firefox */
+.form-control[type=number] {
+    appearance: textfield;
+}
+  
+/* Hide Stepper on input number - Chrome, Safari, Edge, Opera */
+.form-control::-webkit-outer-spin-button,
+.form-control::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: var(--input-bg);
+}
+
+.form-control ~ label {
+    position: absolute;
+    top: -18px;
+    z-index: 2;
+    color: var(--body-color);
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-bolder);
+    pointer-events: none;
+    background: var(--input-bg);
+}
+
+.form-control.input-label ~ label {
+    top: 14px;
+    left: 20px;
+    padding: 0 4px;
+    color: var(--form-label-color);
+    font-size: var(--font-size-9);
+    text-transform: uppercase;
+    transition: .2s ease all;
+}
+
+.form-control.input-line ~ label {
+    display: none;
+}
+
+.form-control:disabled ~ label,
+.form-control[readonly] ~ label {
+    color: var(--form-label-color);
+}
+
+.form-control.input-line {
+    height: auto;
+    padding: 0;
+    padding-bottom: 4px;
+    border: 0;
+    border-bottom: 1px solid var(--form-label-color);
+    border-radius: 0;
+    font-size: var(--font-size-24);
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+}
+
+.form-control ~ label::first-letter {
+    text-transform: capitalize;
+}
+
+.form-control::placeholder {
+    color: var(--form-label-color);
+    font-size: var(--font-size-9);
+    text-align: left;
+}
+
+.form-control.input-label::placeholder {
+    opacity: 0;
+}
+
+.form-control.input-line::placeholder {
+    position: absolute;
+    bottom: 16px;
+}
+
+.form-control:focus,
+.form-control:not(:placeholder-shown) {
+    border-color: var(--input-border-focus);
+    color: var(--body-color);
+    background-color: var(--input-bg);
+    box-shadow: none;
+    &:disabled {
+        border-color: var(--form-label-color);
+        color: var(--form-label-color);
+    }
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    padding-right: calc(1.5em + .75rem);
+    border-color: var(--color-danger);
+    background-image: url('~@/assets/images/icons/error.svg');
+    background-position: right calc(.38em + .78rem) center;
+    background-size: var(--font-size-16);
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-validated .form-control:valid:focus,
+.form-control.is-valid:focus 
+ {
+    border-color: var(--input-border-focus);
+    background-image: none;
+    box-shadow: none;
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+    box-shadow: none;
+}
+
+.was-validated .form-control:valid ~ label {
+    color: var(--body-color);
+}
+
+.form-control.input-label:focus ~ label,
+.form-control.input-label:invalid ~ label,
+.form-control.input-label:not(:placeholder-shown) ~ label {
+    color: var(--input-border-focus);
+    transform: translateY(-21px);
+}
+
+.was-validated .form-control.input-label ~ label,
+.was-validated .form-control.input-label:not(:placeholder-shown) ~ label {
+    color: var(--color-danger);
+}
+
+.was-validated .form-control.input-line:invalid,
+.form-control.input-line.is-invalid {
+    padding-right: 16px;
+    background-position: right 0 center;
+}
+
+.was-validated .form-control.input-label:valid ~ label {
+    color: var(--input-border-focus);
+}
+
+.form-control ~ .invalid-feedback {
+    position: absolute;
+    top: -33px;
+    font-size: var(--font-size-8);
+    font-weight: var(--font-weight-bolder);
+}
+
+.form-control.input-line ~ .invalid-feedback {
+    top: -14px;
+}
+
+.form-control.input-label ~ .invalid-feedback {
+    top: -24px;
+}
+
+@media (min-width: 576px) {
+    .form-control {
+        width: 177px;
+    }
+
+    .form-control.input-line {
+        width: 248px;
+    }
+
+    .modal-body .form-control,
+    .modal-body .form-control.input-line {
+        width: 100%;
+    }
+}

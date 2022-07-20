@@ -1,0 +1,157 @@
+<!-- Top navigation-->
+<nav class="navbar navbar-expand navbar-dark fixed-top" id="nav">
+    <div class="container-fluid px-3">
+        <router-link :to="{ name: 'Home' }" href="#!" class="navbar-brand">
+            <img alt="DLS logo" class="dls-logo img-fluid" src="../../assets/images/logos/dls_symbol_dark.svg" v-if="!$route.meta.hideNavigation">
+            <span class="ps-2 ps-md-3 display-6 fw-bold text-white">Design System Library</span>
+        </router-link>            
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-0 mb-md-0">
+                <li class="nav-item">
+                    <a aria-current="page" href="#" class="nav-link active pe-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi-gear me-1"></i></a>
+                </li>                                                           
+                <li class="nav-item d-none" v-if="$route.meta.public">
+                    <router-link :to="{ name: 'Register' }" class="nav-link">Register</router-link>
+                </li>                                                                
+                <li class="nav-item d-none" v-if="$route.meta.public">
+                    <router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link>
+                </li>                                           
+            </ul> 
+        </div>
+
+        <div id="sidebarToggle" class="sidebar-toggle" :class="{ 'active' : isBurgerActive }" @click.prevent="toggle" v-if="!$route.meta.hideNavigation">
+            <button type="button" class="burger-button" title="Menu">
+                <span class="burger-bar burger-bar--1"></span>
+                <span class="burger-bar burger-bar--2"></span>
+                <span class="burger-bar burger-bar--3"></span>
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+<div class="d-flex flex-row page-wrapper" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end sidebar" id="sidebar-wrapper" v-if="!$route.meta.hideNavigation">
+        <div class="list-group list-group-flush make-sticky">
+
+            <ul class="list-group list-group-flush accordion" id="sidenavAccordion">
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Home' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Overview</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Badges' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Badges</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>                
+
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Buttons' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Buttons</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>
+                
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Inputs' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Input Fields</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li> 
+                
+                
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Drop Downs' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Drop Downs</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>                              
+                
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Modals' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Modals</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Tables' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Tables</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li> 
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Tabs' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Tabs</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Animations' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Animations</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>                    
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Icons' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Icons</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>                   
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'Mock Home' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">Mock Home</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <router-link :to="{ name: 'MB Home' }" aria-current="page" href="#!" class="d-flex" @click.prevent="toggle">
+                        <span class="">MarginBloc</span><span class="nav-icon ms-auto"><i class="bi bi-chevron-right"></i></span>
+                    </router-link>                      
+                </li>                               
+                               
+                <li class="list-group-item list-group-item-action"><a class="orange" href="#!" @click="signOut">Logout</a></li>
+            </ul>
+    
+            
+
+        </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper" class="d-flex flex-column h-100 page-content-wrapper">
+        <!-- Page content-->
+        <div class="container-fluid holdvue">
+            <slot></slot>
+        </div>
+        <footer class="footer mt-auto pt-4 pb-3 pt-md-7 pb-md-6" v-if="!$route.meta.hideNavigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto align-self-center">
+                        <a class="navbar-brand" href="#">
+                            <img alt="DLS logo" class="dls-logo img-fluid" src="../../assets/images/logos/dls_symbol_dark.svg">
+                        </a>   
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="row">
+                            <div class="col-12 col-sm-auto align-self-center border-end pe-5">
+                                <p class="mb-0">Version 1.2</p>
+                                <p class="mb-0">Copyright &copy; 2022 adhara.io</p>
+                                <p class="mb-0 fw-bolder">Last updated 4 July 2022</p>
+                            </div>
+                            <div class="col align-self-center ps-sm-5 pt-2">
+                                <p class="mb-0">Have  feedback or questions?</p>
+                                <p class="mb-0">Email us at dls@adhara.io</p>
+                                <p class="mb-0">or open an issue on GitHub</p>
+                            </div> 
+                        </div>
+                    </div>                      
+                </div>                    
+            </div>
+        </footer>  
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h6 id="offcanvasRightLabel">Settings</h6>
+        <a><i class="bi-x me-1" data-bs-dismiss="offcanvas" aria-label="Close"></i></a>
+
+    </div>
+    <div class="offcanvas-body">
+        <switch-theme :defaultTheme="'adhara'" :themeList="['adhara','bluebank','pinkbank','blackbank']"></switch-theme> 
+    </div>
+</div>

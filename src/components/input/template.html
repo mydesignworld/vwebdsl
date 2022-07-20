@@ -1,0 +1,5 @@
+<div class="input-wrapper" :class="{'was-validated' : errorMessage}, _wrapperStyle">
+    <input :type="type" :value="modelValue" :id="_inputId" :placeholder="placeholder" class="form-control" :class="_inputStyle" v-bind="$attrs, { disabled, required }" autocomplete="off" @input="_onInput" @change="_onChange" @blur="_onBlur">
+    <label :for="_inputId" v-if="label">{{ label }}</label>
+    <div class="invalid-feedback" v-if="errorMessage">{{ errorMessage }}</div>
+</div>

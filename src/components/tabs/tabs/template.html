@@ -1,0 +1,18 @@
+<div class="tabs">
+    <div class='nav nav-tabs' :class='isSticky' :id="id" ref="tabScroll">
+        <button class="nav-link"  
+            :id="title.toLowerCase().replace(/ /g, '-') + '-tab'"  
+            v-for="title in tabTitles" :key="title" 
+            @click="showTab([title.toLowerCase()])"
+            data-bs-toggle="tab"
+            :data-bs-target="'#' + title.toLowerCase().replace(/ /g, '-')"
+            type="button" role="tab" aria-controls="contact" aria-selected="false"
+            :class="[{ 'active': selectedTitle == title }], title.toLowerCase().replace(/ /g, '-') + '-tab'"
+            >
+            {{ title }}
+        </button>
+    </div>
+    <div class="tab-content" :id="id + 'Content'">
+        <slot></slot>
+    </div>
+</div>

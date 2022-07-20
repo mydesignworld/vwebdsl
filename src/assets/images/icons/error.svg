@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="input-fields-with-labels" transform="translate(-452.000000, -520.000000)">
+            <g id="Group-3" transform="translate(452.319847, 520.549534)">
+                <circle id="Oval-Copy" fill="#D0021B" cx="8" cy="10.5" r="1"></circle>
+                <path d="M8.87415728,0.514539247 L15.1746428,11.8554132 C15.442856,12.338197 15.2689122,12.9470002 14.7861285,13.2152134 C14.6375705,13.2977456 14.4704298,13.3410561 14.3004855,13.3410561 L1.69951446,13.3410561 C1.14722971,13.3410561 0.69951446,12.8933409 0.69951446,12.3410561 C0.69951446,12.1711119 0.742824961,12.0039712 0.825357184,11.8554132 L7.12584272,0.514539247 C7.39405591,0.0317555141 8.0028592,-0.142188283 8.48564293,0.126024902 C8.648883,0.216713827 8.78346835,0.351299181 8.87415728,0.514539247 Z" id="Triangle-Copy" stroke="#D0021B" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="8" y1="4.34105615" x2="8" y2="8.44105615" id="Line-Copy" stroke="#D0021B" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

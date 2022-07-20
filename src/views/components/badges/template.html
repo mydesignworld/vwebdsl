@@ -1,0 +1,124 @@
+<div class="badges-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">
+      <span class="text-primary">Standard Badges</span> are primarily used to both seperate and highlight more discrete pieces of information, so that they are both brought to the users attention but not in a manner that will add to or overload cognition. 
+      <span class="text-primary">Statuses Badges</span> highlight content that where a user needs a way to clearly understand progres. They should be clearly differentiated by colour and icon treatments. 
+    </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Compact & Discoverable" icon="arrows-collapse" card="primary" animate>
+          <p class="card-text">A badge should be compact and represent discrete information only. <br/>
+            Statuses should be easy to find among other components
+          </p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Focused" icon="eye" card="primary" animate>
+          <p class="card-text">A badge should help highlight information and be clear and easy to scan. Different styles inform users of different status levels
+          </p>
+        </Card>
+      </div>      
+      <div class="col">
+        <Card title="Relevant" icon="check-square" card="primary" animate>
+          <p class="card-text">Should have a clearly understood relationship to the content it supports</p>
+        </Card>
+      </div>
+    </div>
+
+    <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky id="badgeTabs">
+          <Tab title="Standard Badge">
+            <badge-standard />
+          </Tab>
+          <Tab title="Status Badge">
+            <badge-status />
+          </Tab>
+        </Tabs>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>primary</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set badge primary L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>secondary</code></td>
+                  <td>Boolean</td>
+                  <td>Will set badge secondary L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr> 
+                <tr>
+                  <td><code>dark</code></td>
+                  <td>Boolean</td>
+                  <td>Will set badge dark background L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>light</code></td>
+                  <td>Boolean</td>
+                  <td>Will set badge light (no) background L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>                                              
+                <tr>
+                  <td><code>state</code></td>
+                  <td>String</td>
+                  <td>Different states the badge can be in. It will change the badge's color</td>
+                  <td><span class="text-primary">default</span>, caution, success, warning</td>
+                </tr>
+                <tr>
+                  <td><code>size</code></td>
+                  <td>String</td>
+                  <td>Will determine the badge size</td>
+                  <td><span class="text-primary">normal</span>, small, xsmall</td>
+                </tr>
+                <tr>
+                  <td><code>icon-left</code></td>
+                  <td>String</td>
+                  <td>Will add any of our predefined icons to the left side of the badge. E.g. <code>icon-left="bi-dash-circle"</code>
+                  </td>
+                  <td><span class="text-primary">icon-left=""</span></td>
+                </tr>
+                <tr>
+                  <td><code>icon-right</code></td>
+                  <td>String</td>
+                  <td>Will add any of our predefined icons to the right side of the badge. E.g. <code>icon="bi-dash-circle"</code>
+                  </td>
+                  <td><span class="text-primary">icon-right=""</span></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <FooterNav nextNav="/components/buttons" nextTitle="Buttons" />
+
+</div>

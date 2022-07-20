@@ -1,0 +1,138 @@
+<div class="inputs-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">Inputs fields enable the user to interact with and input content and data, usually to enter and edit
+      text. They use a container or area to provide a clear affordance for interaction, making these fields easily
+      discoverable in any given layout. They should be:</p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Discoverable" icon="search" card="primary" animate>
+          <p class="card-text">Input fields should create contrast between themselves and surrounding content</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Clear" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">Input field states should be clearly differentiated from one another</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Efficient" icon="speedometer2" card="primary" animate>
+          <p class="card-text">Input fields should make it easy for users to understand the information required to
+            populate</p>
+        </Card>
+      </div>
+    </div>
+
+
+   <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky id="inputTabs">  
+          <Tab title="Standard">
+            <input-with-titles />
+          </Tab>           
+          <Tab title="Labels">
+            <input-with-labels />
+          </Tab>                           
+          <Tab title="Lines">
+            <input-with-lines />
+          </Tab>               
+        </Tabs>
+      </div>
+    </div>  
+    
+    
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>labels</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">If neither labels, lines or titles are specified lables will be the default. Will set input to label L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>lines</code></td>
+                  <td>Boolean</td>
+                  <td>Will set input to line L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>                               
+                <tr>
+                  <td><code>type</code></td>
+                  <td>String</td>
+                  <td>Different types that are allowed for input fields</td>
+                  <td><span class="text-primary">text</span>, password, email, number</td>
+                </tr>
+                <tr>
+                  <td><code>label</code></td>
+                  <td>String</td>
+                  <td>Will add a label for the input. E.g. <code>label="username"</code>
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>
+                <tr>
+                  <td><code>id</code></td>
+                  <td>String</td>
+                  <td>Will add an identifier for the input, and bind it to the label. If no id is evident the lable will be used as an id. E.g. <code>id="username"</code>
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>                              
+                <tr>
+                  <td><code>errorMessage</code></td>
+                  <td>String</td>
+                  <td>Will add message that should display as error on validation fail. E.g. <code>errorMessage="Not a valid username"</code>
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>
+                <tr>
+                  <td><code>placeholder</code></td>
+                  <td>String</td>
+                  <td>To add a placeholder description to the input, but also to assit with animating labels. E.g. <code>placeholder="Please enter username"</code>
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>                
+                <tr>
+                  <td><code>value</code></td>
+                  <td>String</td>
+                  <td>The value of the input to submit. can either be String or Number.
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>                 
+                <tr>
+                  <td><code>disabled</code></td>
+                  <td>Boolean</td>
+                  <td>Will set input to disabled state with no funtionality</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>required</code></td>
+                  <td>Boolean</td>
+                  <td>Will make input mandatory before submit can happen</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+
+  <FooterNav prevNav="/components/buttons" prevTitle="Buttons" nextNav="/components/drop-downs"
+    nextTitle="Drop Downs" />
+</div>

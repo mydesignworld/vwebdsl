@@ -1,0 +1,72 @@
+<div class="table-pagination-sort-view">
+  <div class="row">
+    <div class="col">
+      <div class="table-hold">
+        <div class="table-intro">Last Updated 10:23:07</div>
+        <Card class="table-card fade-in">
+          <a-table :headers="columnsmin" :rows="rows" :sort="sort" :pagination="pagination" responsive>
+            <template v-slot:table-actions>
+              <a-button secondary size="small">secondary button</a-button>
+              <a-button primary size="small">primary button</a-button>
+            </template>             
+            <template v-slot:items="{ row }">
+              <td class="text-nowrap">{{ row.date }}</td>
+              <td class="text-nowrap text-end">{{ row.amt }}</td>
+              <td class="text-nowrap text-end">{{ row.rate }}</td>
+              <td class="text-nowrap text-end">{{ row.interest }}</td>
+              <td class="text-nowrap text-end">{{ row.total }}</td>
+              <td>
+                <a-drop-down :options="options" defaultValue="Select Option" size="small" />
+              </td>
+            </template>
+            <template v-slot:no-data>
+              <span>No data</span>
+            </template>
+          </a-table>
+        </Card>
+      </div>
+    </div>
+  </div>
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-table :headers="columnsmin" :rows="items" :footers="footersmin" :sort="sort" :pagination="pagination">
+  <template v-slot:items="{ row }">
+    <td class="text-nowrap">{ row.date }</td> 
+    <td class="text-nowrap text-end">{ row.amount }</td>   
+  </template>
+
+  <template v-slot:no-data>
+    <span>No data</span>
+  </template>
+</a-table>
+
+
+<table class="table align-middle">
+  <thead>
+    <tr>
+      <th class="col-sortable text-nowrap"><span>Date</span><i class="bi bi-arrow-down-up"></i></th>
+      <th class="text-end col-sortable text-nowrap"><span>Amount</span><i class="bi bi-arrow-down-up"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-nowrap">22 Nov 2020</td>
+      <td class="text-nowrap text-end">1039484.05</td>
+    </tr>
+    <tr>
+      <td class="text-nowrap">21 Mar 2021</td>
+      <td class="text-nowrap text-end">1044706.76</td>
+    </tr>
+  </tbody>
+  <tfoot class="footer-one">
+    <tr>
+      <th class=""><span>Total</span></th>
+      <th class="text-end"><span>9145222.87</span></th>
+    </tr>
+  </tfoot>
+</table>
+</textarea>
+  </CardCode>
+</div>

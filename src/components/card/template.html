@@ -1,0 +1,7 @@
+<div class="card info-card" :class="[card, { 'animated' : animate }]">
+    <div class="card-body">
+        <a-icon v-if="icon" class="icon-md text-primary" :icon="icon" />
+        <h5 class="card-title" v-if="title">{{ title }}</h5>
+        <slot></slot>
+    </div>
+</div>

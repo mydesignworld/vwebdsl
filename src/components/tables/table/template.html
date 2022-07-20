@@ -1,0 +1,53 @@
+<div class="table-component">
+  <div class="table-actions" :class="{'responsive-actions': responsive, 'scroll-actions': scrollable}" v-if="$slots['table-actions']">
+    <slot name="table-actions" />
+  </div>  
+  <div :class="{'table-responsive': responsive, 'table-scroll': scrollable}">
+    <table class="table align-middle" :class="tableStyle, {'table-hover': hover}, {'sortable': sortEnabled} ">
+      <thead>
+        <tr>
+          <th v-for="(col, idx) in headers" :key="idx" @click="sortBy(idx)" :class="{'text-end': col.type == 'Number', 'col-sortable': col.sortable}" class="text-nowrap">
+            <div class="d-flex align-items-center">
+              <span class="d-inline-block"> {{ col.label }}</span>
+              <template v-if="sortEnabled">
+                <template v-if="sortColumn == idx">
+                  <a-icon icon="chevron-up" v-if="sortOrder == 'desc'" class="active" />
+                  <a-icon icon="chevron-down" v-else class="active" />                  
+                </template>
+                <template v-else>
+                  <span class="d-inline-block">
+                      <a-icon icon="chevron-up" v-if="col.sortable" class="d-block" />
+                      <a-icon icon="chevron-down" v-if="col.sortable" class="d-block" />
+                  </span>
+                </template>
+              </template>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <template v-if="numRows > 0">
+          <tr v-for="(row, idx) in visibleRows" :key="idx">
+            <slot name="items" :row="row"></slot>
+          </tr>
+        </template>
+        <template v-else>
+          <tr>
+            <td :colspan="numColumns">
+              <slot name="no-data"></slot>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+      <tfoot v-if="footers" class="footer-one">
+        <tr>
+          <th v-for="(col, idx) in footers" :key="idx" :class="{'text-end': col.type == 'Number', 'col-sortable': col.sortable}"><span>{{ col.label }}</span></th>
+        </tr>
+      </tfoot>              
+    </table> 
+  </div>
+  <div class="table-load" :class="{'responsive-load': responsive, 'scroll-load': scrollable}" v-if="$slots['table-load']">
+    <slot name="table-load" />
+  </div>   
+  <TablePagination v-if="paginationEnabled" :page="page" :total-pages="totalPages" :pagination-options="paginationOptions" @new-page="onNewPage" />
+</div>

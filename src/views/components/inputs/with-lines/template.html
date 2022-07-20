@@ -1,0 +1,72 @@
+<div class="input-with-titles-view">
+
+  <div class="row mt-2">
+    <div class="col">
+      <Card title="Preview">
+        <a-input type="number" lines id="user-name" placeholder="Enter Username" class="mb-0" />
+      </Card>
+    </div>
+  </div>
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-input lines label="username" id="user-name" placeholder="Enter Username" />
+
+<div class="input-wrapper was-validated wrap-line">
+  <input type="email" id="InputEmails-lines" placeholder="Enter Username" class="form-control input-line" required="" autocomplete="off">
+  <label for="InputEmails-lines">user name</label>
+  <div class="invalid-feedback">You have insufficient funds, please try again</div>
+</div>
+</textarea>
+  </CardCode>
+
+
+
+
+
+  <div class="row mt-6">
+    <div class="col">
+      <Card title="Formats">
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <a-input lines label="username" id="user01" class="mb-0" placeholder="Enter Username" disabled />
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Standard & Disabled State</h5>
+          </div>
+        </div>
+
+
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <a-input lines label="username" id="user02-lines" class="mb-0" placeholder="Enter Username" />
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Input State (Focus)</h5>
+          </div>
+        </div>
+
+
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <a-input lines label="username" id="user03-lines" class="mb-0" placeholder="Enter Username" />
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Completed State</h5>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <a-input lines type="email" label="user name" id="InputEmails-lines" class="mb-0" required errorMessage="You have insufficient funds, please try again" placeholder="Enter Username"/>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-5 mb-sm-0">Error State with real time validation and prompt</h5>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+
+</div>

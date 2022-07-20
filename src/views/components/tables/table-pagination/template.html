@@ -1,0 +1,78 @@
+<div class="table-pagination-view">
+
+  <div class="row">
+    <div class="col">
+      <div class="table-hold">
+        <Card class="table-card fade-in">       
+          <a-table :headers="columnsmin" :rows="items" :pagination="pagination" responsive>
+            <template v-slot:items="{ row }">
+              <td class="text-nowrap">{{ row.date }}</td>
+              <td class="text-nowrap text-end">{{ row.amt }}</td>
+              <td class="text-nowrap text-end">{{ row.rate }}</td>
+              <td class="text-nowrap text-end">{{ row.interest }}</td>
+              <td class="text-nowrap text-end">{{ row.total }}</td>
+              <td>
+                <a-drop-down :options="options" defaultValue="Select Option" size="small" />
+              </td>
+            </template>
+
+            <template v-slot:no-data>
+              <span>No data</span>
+            </template>
+          </a-table>
+        </Card>
+      </div>
+    </div>
+  </div>
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-table :headers="columnsmin" :rows="items" :footers="footersmin" :pagination="pagination">
+  <template v-slot:items="{ row }">
+    <td class="text-nowrap">{ row.date }</td> 
+    <td class="text-nowrap text-end">{ row.amount }</td>    
+  </template>
+
+  <template v-slot:no-data>
+    <span>No data</span>
+  </template>
+</a-table>
+
+
+<table class="table align-middle">
+  <thead>
+    <tr>
+      <th class="col-sortable text-nowrap">
+        <span>Date</span>
+      </th>
+      <th class="text-end col-sortable text-nowrap">
+        <span>Amount</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-nowrap">11 Sep 2021</td>
+      <td class="text-nowrap text-end">4285001.16</td>
+    </tr>
+    <tr>
+      <td class="text-nowrap">19 Aug 2021</td>
+      <td class="text-nowrap text-end">9699606.18</td>
+    </tr>
+  </tbody>
+  <tfoot class="footer-one">
+    <tr>
+      <th class=""><span>Total</span></th>
+      <th class="text-end"><span>9145222.87</span></th>
+    </tr>
+  </tfoot>
+</table>
+
+</textarea>
+  </CardCode>
+
+
+</div>
+
+

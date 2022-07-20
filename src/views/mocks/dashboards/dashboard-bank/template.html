@@ -1,0 +1,200 @@
+<div class="dashboard-bank-view tiles dash-board">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="grid">
+        <div class="cols">
+          <div class="d-flex mb-4">
+            <div>
+              <div class="display-8 fw-bolder">Task List</div>
+              <div class="display-2 fw-bolder">0{{ toDoBank.length }}</div>
+            </div>
+            <div class="ms-auto align-self-center">
+              <a-badge primary size="small" class="me-3"></a-badge>
+            </div>
+          </div>
+          <transition-group name="list">
+            <a-dashboard-card v-for="(toDo,index) in toDoBank" :key="toDo.id">
+              <template #header>
+                <a-badge primary @click="addToInProgressBank(toDo, index)">{{ toDo.curr }}</a-badge>
+                <a-badge dark>{{ toDo.obligation }}</a-badge>                
+                <span class="fw-bolder" :id="toDo.id">{{ toDo.entity }}</span>
+                <span class="ms-auto" v-if="!toDo.actionSelect"><a-button secondary size="xsmall" class="m-0"  @click="addToInProgressBank(toDo, index)">Submit</a-button></span>
+                <div class="xs-select ms-auto" v-if="toDo.actionSelect"><div><a-drop-down :options="options" defaultValue="Action" size="xsmall" @change="displayModal('trigger-' + toDo.id.toLocaleString())"/></div></div>                
+              </template>
+              <template #body>
+                <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
+                <div class="card-text toggle-me" :class="{ 'active-toggle': toDo.toggleText }"> 
+                  <div class="data-row">
+                    <div>{{ toDo.date }} {{ toDo.time }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.account }}</div>           
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.rate }}</div>          
+                  </div>
+                  <div class="card-text sub-text">
+                    <div class="data-row fw-bold">Obligation</div>
+                    <div class="data-row">
+                      <div>{{ toDo.date }} {{ toDo.time }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>
+                      <div>{{ toDo.obligation }}</div>
+                      <div>{{ toDo.entity }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.account }}</div>           
+                    </div>
+                  </div>
+                </div>
+                <a-icon v-if="!toDo.toggleText && toDo.actionSelect" icon="chevron-down" class="text-primary action-icon" @click="toggleCardText(toDo, index)" />
+                <a-icon v-if="toDo.toggleText" icon="chevron-up" class="text-primary action-icon" @click="toggleCardText(toDo, index)" />                  
+                <Modal ref="modal" :id="toDo.id.toLocaleString()" title="Set Rate" trigger="text" closeIcon @saveModal="addToInProgressBank(toDo, index)">
+                  <label>Amount</label>
+                  <a-badge primary>{{ toDo.curr }}</a-badge>
+                  <div class="mb-5 mt-3 display-3">{{ toDo.total.toLocaleString() }}</div>
+                  <a-input label="Rate" id="idAccount" :value="toDo.rate.toLocaleString()" placeholder="Enter Rate" />
+                </Modal>
+                    
+              </template>
+            </a-dashboard-card>
+          </transition-group>
+
+
+
+
+
+        </div>
+
+
+        <div class="cols">
+          <div class="d-flex mb-4">
+            <div>
+              <div class="display-8 fw-bolder">In Progress</div>
+              <div class="display-2 fw-bolder">0{{ inProgressBank.length }}</div>
+            </div>
+            <div class="ms-auto align-self-center">
+              <a-badge primary state="caution" size="small" class="me-3"></a-badge>
+            </div>
+          </div>
+          <transition-group name="list">
+            <a-dashboard-card v-for="(toDo,index) in inProgressBank" :key="toDo.id">
+              <template #header>
+                <a-badge primary @click="addToCompletedBank(toDo, index)">{{ toDo.curr }}</a-badge>
+                <a-badge dark>{{ toDo.obligation }}</a-badge>
+                <span class="fw-bolder" :id="toDo.id">{{ toDo.entity }}</span>
+                <a-badge primary state="success" icon-right="check-circle" class="ms-auto">{{ toDo.progress }}</a-badge>
+              </template>
+              <template #body>
+                <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
+                <div class="card-text toggle-me">
+                  <div class="data-row">
+                    <div>{{ toDo.date }} {{ toDo.time }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.account }}</div>           
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.rate }}</div>          
+                  </div>
+                  <div class="card-text sub-text">
+                    <div class="data-row fw-bold">Obligation</div>
+                    <div class="data-row">
+                      <div>{{ toDo.date }} {{ toDo.time }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>
+                      <div>{{ toDo.obligation }}</div>
+                      <div>{{ toDo.entity }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.account }}</div>           
+                    </div>
+                  </div>
+                </div>
+                
+                <Modal ref="modal" :id="toDo.id.toLocaleString()" :title="toDo.total.toLocaleString()" trigger="text" closeIcon @saveModal="addToCompletedBank(toDo, index)">
+                  <a-input label="ID Account" id="idAccount" placeholder="Enter ID Account" />
+                </Modal>
+                    
+              </template>
+            </a-dashboard-card>
+          </transition-group>
+        </div>
+
+
+
+        <div class="cols">
+          <div class="d-flex mb-4">
+            <div>
+              <div class="display-8 fw-bolder">Completed</div>
+              <div class="display-2 fw-bolder">0{{ completedBank.length }}</div>
+            </div>
+            <div class="ms-auto align-self-center">
+              <a-badge primary state="success" size="small" class="me-3"></a-badge>
+            </div>
+          </div>
+
+          <transition-group name="list">
+            <a-dashboard-card v-for="(toDo,index) in completedBank" :key="toDo.id" actionIcon>
+              <template #header>
+                <a-badge primary @click="removeFromLists(index)">{{ toDo.curr }}</a-badge>
+                <a-badge dark>{{ toDo.obligation }}</a-badge>
+                <span class="fw-bolder" :id="toDo.id">{{ toDo.entity }}</span>
+                <a-badge primary state="success" icon-right="check-circle" class="ms-auto">Completed</a-badge>
+              </template>
+              <template #body>
+                <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
+                <div class="card-text toggle-me">
+                  <div class="data-row">
+                    <div>{{ toDo.date }} {{ toDo.time }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>          
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.account }}</div>           
+                  </div>
+                  <div class="data-row">
+                    <div>{{ toDo.rate }}</div>          
+                  </div>
+                  <div class="card-text sub-text">
+                    <div class="data-row fw-bold">Obligation</div>
+                    <div class="data-row">
+                      <div>{{ toDo.date }} {{ toDo.time }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.amtccy.toLocaleString() }} {{ toDo.curr }}</div>
+                      <div>{{ toDo.obligation }}</div>
+                      <div>{{ toDo.entity }}</div>
+                    </div>
+                    <div class="data-row">
+                      <div>{{ toDo.account }}</div>           
+                    </div>
+                  </div>
+                </div>
+                
+                <Modal ref="modal" :id="toDo.id.toLocaleString()" :title="toDo.total.toLocaleString()" trigger="text" closeIcon @saveModal="removeFromLists(index)">
+                  <a-input label="ID Account" id="idAccount" placeholder="Enter ID Account" />
+                </Modal>
+                    
+              </template>
+            </a-dashboard-card>
+          </transition-group>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

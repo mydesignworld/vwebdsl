@@ -1,0 +1,5 @@
+<span class="badge" :class="[_badgeStyle, { 'icon-right': iconRight, 'icon-left': iconLeft }]" @click="_onClick">
+    <a-icon class="left-icon" v-if="iconLeft" :icon="iconLeft" />
+    <slot />
+    <a-icon class="right-icon" v-if="iconRight" :icon="iconRight" />
+</span>

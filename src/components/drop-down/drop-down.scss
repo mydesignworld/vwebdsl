@@ -1,0 +1,177 @@
+.select-box {
+    position: relative;
+    width: fit-content;
+    min-width: 108px;
+    max-width: 248px;
+    margin: .2rem .4rem .2rem 0;
+    outline: none;
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    text-align: left;
+    text-transform: uppercase;
+}
+  
+.selected-item {
+    display: flex;
+    justify-content: left;
+    height: var(--input-lg-height);
+    padding: 0 1.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--button-radius);
+    color: var(--color-primary);
+    line-height: var(--input-lg-height);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+}
+
+.selected-item.select-sm {
+    height: var(--button-sm-height);
+    padding: 0 1rem;
+    line-height: var(--button-sm-height);
+}
+
+.selected-item.select-sm div {
+    margin-top: 0;
+}
+
+.selected-item.select-xs {
+    height: var(--button-xs-height);
+    padding: 0 8px 0 5px;
+    line-height: var(--button-xs-height);
+}
+
+.selected-title {
+    display: inline-block;
+    padding-right: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.select-xs .selected-title {
+    padding: 0 10px 0 8px;
+}
+
+.selected-item.disabled,
+.select-box .items .disabled
+{
+    opacity: .25;
+}
+
+.selected-item.open {
+    border: 1px solid var(--color-primary);
+}
+
+.select-box .items {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin-top: .5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 1rem;
+    color: var(--color-primary);
+    background-color: var(--input-bg);
+    overflow: hidden;
+}
+
+.select-box .item {
+    height: 2rem;
+    padding: 0 1.5rem;
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: .8s;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+}
+
+.select-sm + .items .item {
+    padding: 0 1rem;
+}
+
+.select-xs + .items .item {
+    padding: 0 5px;
+}
+
+.xs-select .select-box {
+    min-width: 60px;
+    margin: 0;
+}
+
+.xs-select .select-box .item {
+    padding: 0 5px;
+}
+
+.select-box .item:hover,
+.select-box .item.hover,
+.select-box .item.current  {
+    background-color: rgba(var(--color-primary-rgb), .1);
+}
+
+.selecthide {
+    height: 0;
+    opacity: 0;
+}
+
+.selecthide.showme,
+.selecthide.hideme {
+    height: auto;
+}
+
+.select-box .items.showme {
+    /* stylelint-disable-next-line no-unknown-animations */
+    animation: animshow .1s ease 0s 1 normal forwards;
+}
+
+.selecthide.hideme {
+    /* stylelint-disable-next-line no-unknown-animations */
+    animation: animhide .1s ease 0s 1 normal forwards;
+}
+
+.selected-item .select-icon.chevron-up {
+    display: none;
+}
+
+.selected-item.open .select-icon.chevron-down {
+    display: none;
+}
+
+.selected-item.open .select-icon.chevron-up {
+    display: inline-block;
+}
+
+.selected-item .select-icon {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 10px;
+    stroke: var(--color-primary);
+    stroke-width: .8;
+}
+
+.selected-item.select-sm .select-icon {
+    top: 11px;
+    right: 16px;
+}
+
+.selected-item.select-xs .select-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 9px;
+}
+
+@media (min-width: 768px) {
+    .selected-item.select-sm div {
+        margin-top: -1px;
+    }
+
+    .selected-item.select-xs div {
+        margin-top: -1px;
+    }
+}

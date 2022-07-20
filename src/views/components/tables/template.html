@@ -1,0 +1,127 @@
+<div class="tables-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">Tables present a list of organised information in a grid format, and consist of rows and columns. It always have 
+      a header and can incude a footer to display totals. The goal is to organise data in a logical way that makes it easy for the user to scan 
+      and look for patterns. In addition to data it can contain actionable components like buttons and dropdowns.
+    </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Organized" icon="search" card="primary" animate>
+          <p class="card-text">Data should be sorted in a logical way that can be by date, alphabetically or numerically.</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Interactive" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">The user should be able to interact wit the information, e.g. being able to sort it or to trigger and action.</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Intuitive" icon="speedometer2" card="primary" animate>
+          <p class="card-text">Data should be structured in a logical way to allow the user to easily understand the it.</p>
+        </Card>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky>
+          <Tab title="Table">
+            <table-scroll-view />
+          </Tab>
+          <Tab title="Table Scroll Filter">
+            <table-scroll-sort-view />
+          </Tab>
+          <Tab title="Table Pagination Filter">
+            <table-pagination-sort-view />
+          </Tab>          
+        </Tabs>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>:headers</code></td>
+                  <td>Array</td>
+                  <td>Indictate the array in the data file that should be used to create the individual headers</td>
+                  <td><span class="text-primary"></span></td>
+                </tr>
+                <tr>
+                  <td><code>:rows</code></td>
+                  <td>Array</td>
+                  <td>Indictate the array in the data file that should be used to create the table's rows/columns and content</td>
+                  <td><span class="text-primary"></span></td>
+                </tr>
+                <tr>
+                  <td><code>:footers</code></td>
+                  <td>Array</td>
+                  <td>Indictate the array in the data file that should be used to create the table's footer columns and content</td>
+                  <td><span class="text-primary"></span></td>
+                </tr>
+                <tr>
+                  <td><code>:sort</code></td>
+                  <td>Object</td>
+                  <td>Indicate if the table should be sortable and what data objects should be used. The data object will define what field should be the default sort and if it should be <span class="text-primary">ascending (asc)</span> or descending (desc)</td>
+                  <td>:sort="custom", <br/> custom:{field: 'amt', order: 'asc'}</td>
+                </tr> 
+                <tr>
+                  <td><code>:pagination</code></td>
+                  <td>Object</td>
+                  <td>Indicate if the table should be able to paginate and what data objects should be used. The data object will determine if pagination is enabled (enabled: true), how many items per page (itemsPerPage: 5), and the position of the pagination bar (align: 'right')</td>
+                  <td>:pagination="custom", <br/> custom:{enabled: true, itemsPerPage: 5, align: 'right'}</td>
+                </tr>                                                             
+                <tr>
+                  <td><code>responsive</code></td>
+                  <td>Boolean</td>
+                  <td>Will make the table responsive and add horizontal scroll, should the table exceed the page/container width</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>scrollable</code></td>
+                  <td>Boolean</td>
+                  <td>Will limit the table to 10 rows, and enable scrolling the view the rest of the data</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>hover</code></td>
+                  <td>Boolean</td>
+                  <td>This will add a roll-over animation on each row to increase row readability</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>tableStyle</code></td>
+                  <td>String</td>
+                  <td>This is a placeholder, should the need arise to add any additional styling to set table</td>
+                  <td><span class="text-primary text-nowrap">Any String</span></td>
+                </tr>                                                           
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+  <FooterNav prevNav="/components/modals" prevTitle="Modals" nextNav="/components/tabs" nextTitle="Tabs" />
+</div>

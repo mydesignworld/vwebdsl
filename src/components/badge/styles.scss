@@ -1,0 +1,134 @@
+.badge {
+    min-width: 24px;
+    max-width: 112px;
+    min-height: 24px;
+    margin: .125rem .25rem .125rem 0;
+    padding: var(--spacer-8) var(--spacer-8);
+    border-radius: var(--button-radius);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.badge.disabled {
+    opacity: .35;
+}
+
+.badge.bg-none {
+    padding: var(--spacer-6) var(--spacer-0);
+    font-size: var(--font-size-11);
+    font-weight: var(--font-weight-bold);
+}
+
+.bg-none.badge-sm {
+    padding: var(--spacer-5) var(--spacer-0);
+    font-size: var(--font-size-10);
+}
+
+.bg-none.badge-xs {
+    padding: var(--spacer-4) var(--spacer-0);
+    font-size: var(--font-size-8);
+}
+
+.badge-sm {
+    min-width: 20px;
+    max-width: 88px;
+    height: 20px;
+    min-height: 20px;
+    padding: var(--spacer-6);
+}
+
+.badge-xs {
+    min-width: 16px;
+    max-width: 64px;
+    min-height: 16px;
+    padding: 5px 4px 4px;
+    font-size: var(--font-size-6);
+}
+
+.badge:empty {
+    display: inline-block;
+}
+
+.badge.rounded-pill {
+    height: auto;
+}
+
+.badge.icon-left {
+    position: relative;
+    padding-left: 27px;
+}
+
+.badge-sm.icon-left {
+    padding-left: 20px;
+}
+
+.badge-xs.icon-left {
+    padding-left: 16px;
+}
+
+.badge.icon-right {
+    position: relative;
+    padding-right: 24px;
+}
+
+.badge-sm.icon-right {
+    padding-right: 20px;
+}
+
+.badge-xs.icon-right {
+    padding-right: 16px;
+}
+
+.badge .left-icon,
+.badge .right-icon {
+    position: absolute;
+    top: 4px;
+    font-size: 16px;
+}
+
+.badge-sm .left-icon,
+.badge-sm .right-icon {
+    top: 4px;
+    font-size: 8px;
+}
+
+.badge-xs .left-icon,
+.badge-xs .right-icon {
+    top: 1px;
+    font-size: 10px;
+}
+
+.badge .left-icon{
+    left: 5px;
+}
+
+.badge-sm .left-icon,
+.badge-xs .left-icon {
+    left: 3px;
+}
+
+.badge .right-icon {
+    right: 5px;
+}
+
+.badge-sm .right-icon,
+.badge-xs .right-icon {
+    right: 4px;
+}
+
+.bg-none.badge-sm .left-icon,
+.bg-none.badge-sm .right-icon {
+    font-size: 16px;
+}
+
+.bg-none.badge-xs .left-icon,
+.bg-none.badge-xs .right-icon {
+    font-size: 12px;
+}
+
+.card.info-card .card-header .badge {
+    margin: 0;
+}

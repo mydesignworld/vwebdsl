@@ -1,0 +1,18 @@
+<div :class="alignClass" class="table-pagination">
+  <template v-if="paginationOptions.visualStyle === 'select'">
+    <span>Page </span>
+    <select @change="onChange">
+      <option v-for="index in totalPages" :value="index" :key="index" :selected="index == page">
+        {{ index }}
+      </option>
+    </select>
+    <span> of {{ totalPages }}</span>
+  </template>
+  <template v-else>
+    <span class="align-self-center me-4">{{ fromItem }} - {{ toItem }} of {{ totalRows }}</span>    
+      <a-button primary size="xsmall" icon="chevron-bar-left" :disabled="prevPage < 1" @click="goToPage(1)"></a-button>
+      <a-button primary size="xsmall" icon="chevron-left" :disabled="prevPage < 1" @click="goToPage(prevPage)"></a-button>
+      <a-button primary size="xsmall" icon="chevron-right" :disabled="nextPage > totalPages" @click="goToPage(nextPage)"></a-button>
+      <a-button primary size="xsmall" icon="chevron-bar-right" :disabled="nextPage > totalPages" @click="goToPage(totalPages)"></a-button>
+  </template>
+</div>

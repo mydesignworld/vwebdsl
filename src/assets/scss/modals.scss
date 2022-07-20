@@ -1,0 +1,144 @@
+.modal-header {
+    padding: 2.5rem 0 0;
+    border-bottom: 0;
+}
+
+.modal-title {
+    line-height: var(--font-size-12);
+}
+
+.modal-body {
+    padding: 1.5rem 0 0;
+}
+
+.modal-content {
+    padding: 0 2.5rem;
+    border: 0;
+    border-radius: .4rem;
+}
+
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .5rem 0 .75rem;
+    border-top: 0;
+}
+
+.modal.fade .modal-dialog {
+    transform: scale(.8);
+    transition: transform .3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+.modal.modal-static .modal-dialog {
+    transform: scale(1.02);
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    margin: -.5rem -.5rem -.5rem auto;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-header .modal-close {
+    position: absolute;
+    top: var(--spacer-16);
+    right: var(--spacer-16);
+    width: var(--font-size-24);
+    height: var(--font-size-24);
+    color: var(--color-primary);
+    stroke: currentColor;
+    stroke-width: .1px;
+    cursor: pointer;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+}
+
+.modal-footer .btn {
+    width: 100%;
+    margin-right: 0;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: var(--spacer-8);
+    color: var(--body-color);
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-bolder);
+    line-height: var(--spacer-10);
+    pointer-events: none;
+}
+
+.modal-body .form-control {
+    margin: 0 .4rem 0 0;
+}
+
+.modal-body .select-box {
+    min-width: 100%;
+    margin: 0 .4rem 0 0;
+    text-align: left;
+}
+
+.modal-body .input-wrapper {
+    margin: 20px 0 0;
+}
+
+.modal-body .input-wrapper.wrap-title {
+    margin: 38px 0 0;
+}
+
+.modal-body .badge + .wrap-line {
+    margin-top: var(--spacer-8);
+    margin-bottom: var(--spacer-24);
+}
+
+.modal-body .input-wrapper:last-child {
+    margin-bottom: 24px;
+}
+
+.modal-body > .input-wrapper:first-child {
+    margin-top: 0;
+}
+
+.modal-body > .wrap-title:first-child {
+    margin-top: 18px;
+}
+
+.modal-body .button-hold {
+    padding: 2rem 1px 0;
+    overflow: hidden;
+}
+
+.modal-body .button-hold .btn {
+    width: 100%;
+}
+
+.modal-body .selected-item {
+    justify-content: space-between;
+    padding: 0 1.38rem;
+}
+
+.modal-body .selected-item i {
+    margin: 0 0 0 5px;
+}
+
+.modal-body .item {
+    padding: 0 1.38rem;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 332px;
+    }
+}

@@ -1,0 +1,100 @@
+<div class="drop-down-small-view">
+
+  <div class="row mt-2">
+    <div class="col">
+      <Card title="Preview">
+        <div class="input-wrapper mb-0">
+          <a-drop-down :options="options" defaultValue="Select Action" size="small" />
+        </div>
+      </Card>
+    </div>
+  </div>
+
+
+  <CardCode>
+<textarea class="form-control" rows="3">
+<a-drop-down :options="[ ... ]" defaultValue="Select Action" size="small" />
+</textarea>
+  </CardCode>
+
+
+
+
+
+  <div class="row mt-6">
+    <div class="col">
+      <Card title="Formats">
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0">
+              <a-drop-down :options="optionsempty" defaultValue="Select Option" size="small" />
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Standard State</h5>
+          </div>
+        </div>
+
+
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0">
+              <div class="select-box" tabindex="-1">
+                <div class="selected-item open select-sm">
+                    <div class="selected-title">Select Option</div>
+                    <a-icon class="select-icon chevron-up" icon="chevron-up" />
+                    <a-icon class="select-icon chevron-down" icon="chevron-down" />
+                </div>
+                <div class="items showme position-relative">
+                    <div class="item">Option 01</div>
+                    <div class="item">Option 02</div>
+                    <div class="item">Option 03</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Click State</h5>
+          </div>
+        </div>
+
+
+        <div class="row mb-8">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0">
+              <div class="select-box" tabindex="-1">
+                <div class="selected-item open select-sm">
+                    <div class="selected-title">Select Option</div>
+                    <a-icon class="select-icon chevron-up" icon="chevron-up" />
+                    <a-icon class="select-icon chevron-down" icon="chevron-down" />
+                </div>
+                <div class="items showme position-relative">
+                    <div class="item">Option 01</div>
+                    <div class="item hover">Option 02</div>
+                    <div class="item">Option 03</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Chosen field/hover state</h5>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-12 col-sm-auto order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0">
+              <a-drop-down :options="options" defaultValue="Select Action" size="small" disabled/>
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-sm-0">Disabled State</h5>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+
+
+
+</div>

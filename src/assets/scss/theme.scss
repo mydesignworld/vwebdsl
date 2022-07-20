@@ -1,0 +1,133 @@
+$enable-negative-margins: false !default;
+$primary: #5814a4;
+$primary-900: #3d0478;
+$primary-300: #8c1bff;
+$primary-light: rgba($primary, .08);
+$secondary: #e8e8e8;
+$success: #5b9c14;
+$warning: #f5a623;
+$danger: #d0021b;
+$tertiary: #333;
+$light: #fff;
+$white: #fff;
+$dark: #333;
+
+$body-bg: #f8f8f8;
+$body-color: #333;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+$display-font-weight: 400;
+$display-font-sizes: (
+    1: 4rem,
+    2: 3.5rem,
+    3: 1.5rem,
+    4: 1.13rem,
+    5: 1rem,
+    6: .875rem,
+    7: .75rem,
+    8: .625rem
+);
+
+$font-sizes: (
+    1: 1.5,
+    2: 1.38rem,
+    3: 1.13rem,
+    4: 1rem,
+    5: .88rem,
+    6: .75rem,
+    7: .63rem,
+    8: .5rem
+);
+
+$fs-1: map-get($font-sizes, 1); // 24px
+$fs-2: map-get($font-sizes, 2); // 22px
+$fs-3: map-get($font-sizes, 3); // 18px
+$fs-4: map-get($font-sizes, 4); // 16px
+$fs-5: map-get($font-sizes, 5); // 14px
+$fs-6: map-get($font-sizes, 6); // 12px
+$fs-7: map-get($font-sizes, 7); // 10px
+$fs-8: map-get($font-sizes, 8); // 8px
+
+$spacer: 1rem;
+$grid-gutter-width: 1.5rem;
+
+$gutters: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer * .75,
+    4: $spacer,
+    5: $spacer * 1.5,
+    6: $spacer * 2,
+    7: $spacer * 2.5,
+    8: $spacer * 3
+);
+
+$height: 1rem;
+$heights: (
+    0: 0,
+    1: $height * .25,
+    2: $height * .5,
+    3: $height * .75,
+    4: $height,
+    5: $height * 1.5,
+    6: $height * 2,
+    7: $height * 2.5,
+    8: $height * 3
+);
+
+$h-0: map-get($heights, 0); // 0
+$h-1: map-get($heights, 1); // 4px
+$h-2: map-get($heights, 2); // 8px
+$h-3: map-get($heights, 3); // 12px
+$h-4: map-get($heights, 4); // 16px
+$h-5: map-get($heights, 5); // 24px
+$h-6: map-get($heights, 6); // 32px
+$h-7: map-get($heights, 7); // 40px
+$h-8: map-get($heights, 8); // 48px
+
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer * .75,
+    4: $spacer,
+    5: $spacer * 1.5,
+    6: $spacer * 2,
+    7: $spacer * 2.5,
+    8: $spacer * 3
+);
+
+$spacer-0: map-get($spacers, 0); // 0
+$spacer-1: map-get($spacers, 1); // 4px
+$spacer-2: map-get($spacers, 2); // 8px
+$spacer-3: map-get($spacers, 3); // 12px
+$spacer-4: map-get($spacers, 4); // 16px
+$spacer-5: map-get($spacers, 5); // 24px
+$spacer-6: map-get($spacers, 6); // 32px
+$spacer-7: map-get($spacers, 7); // 40px
+$spacer-8: map-get($spacers, 8); // 48px
+
+$enable-negative-margins: true;
+
+// CUSTOM BRAND
+
+$footer-bg: #333;
+$footer-color: #fff;
+
+$form-label-color: #ccc;
+$input-focus-box-shadow: none;
+
+//FORMS & BUTTONS
+$input-btn-font-size: $fs-8;
+$btn-font-weight: $font-weight-bolder;
+$input-bg: $white;
+$button-text: #fff;
+$input-font-size: .56rem;
+$input-font-weight: $font-weight-bolder;
+$link-hover-color: #4f4f4f;
+$link-color: $tertiary;

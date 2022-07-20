@@ -1,0 +1,8 @@
+<div class="switch-themes">
+    <h5>Select Theme:</h5>
+    <ul>
+        <li v-for="item in themeList" :key="item.id">
+            <a @click="_onThemeClick(item)" :class="['themeswitch ' + item]" :id="item">{{ item }}</a>
+        </li>
+    </ul>    
+</div>

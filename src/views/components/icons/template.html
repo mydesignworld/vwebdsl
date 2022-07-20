@@ -1,0 +1,136 @@
+<div class="icons-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">An icon should assit the user in navigating a system, or give focus to a specific action. It should
+      be clear, simple, modern and friendly. It should explain something without the needs for words. </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Relevant" icon="check-square" card="primary" animate>
+          <p class="card-text">An icon should have a clearly understood relationship to the content it supports</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Informative" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">An icon should be clear and obvious, that can explain it's meaning without using words
+          </p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Familiar" icon="people" card="primary" animate>
+          <p class="card-text">An icons should firstly follow known symbols that are familiar to the user</p>
+        </Card>
+      </div>
+    </div>
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Preview" class="icon-demo">
+          <a-icon icon="adhara-refresh" />
+        </Card>
+      </div>
+    </div>
+
+    <CardCode>
+      <textarea class="form-control" rows="3">
+<a-icon icon="adhara-refresh" />
+
+<svg class="a-icon bi" fill="currentColor">
+  <use xlink:href="#adhara-refresh"></use>
+</svg>
+</textarea>
+    </CardCode>
+
+    <div class="row mt-6">
+      <div class="col">
+
+        <Modal ref="modal" id="iconPreview" :title="content" trigger="text" closeIcon hideActions
+          @closeModal="_hideModal">
+          <div class="mt-3 mb-3 icons-large text-primary text-center ">
+            <a-icon :icon="content" />
+          </div>
+        </Modal>
+
+        <Card title="Available Icons" class="icon-demo">
+          <Tabs id="iconsTab" @tabChanged="_tabChanged">
+            <Tab title="Adhara Icons" class="fade-in">
+              <div class="input-wrapper wrap-label mt-4">
+                <input type="text" id="search-icons" placeholder=" " class="form-control input-label" autocomplete="off"
+                  v-model="searchTerm">
+                <label for="search-icons">Search Icons</label>
+              </div>
+              <div v-if="!_filterByTerm.length">
+                <span>No results availabe for this search term</span>
+              </div>
+              <div else class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8">
+                <div v-for="icon in _filterByTerm" class="col mb-5 text-center icon-container">
+                  <div class="icon-hold text-primary p-3 py-6 mb-2 text-center rounded">
+                    <a-icon :icon="icon.name" class="pointer" @click="_showModal('modal-iconPreview', icon.name)" />
+                  </div>
+                  <div class="icon-text-hold">
+                    {{ icon.name }}
+                  </div>
+                </div>
+              </div>
+            </Tab>
+            <Tab title="Bootstrap Icons" class="fade-in">
+              <div class="input-wrapper wrap-label mt-4">
+                <input type="text" id="search-bootstrap" placeholder=" " class="form-control input-label"
+                  autocomplete="off" v-model="searchTerm">
+                <label for="search-icons">Search Icons</label>
+              </div>
+              <div v-if="!_filterByTerm.length">
+                <span>No results availabe for this search term</span>
+              </div>
+              <div else class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8">
+                <div v-for="icon in _filterByTerm" class="col mb-5 text-center icon-container">
+                  <div class="icon-hold text-primary p-3 py-6 mb-2 text-center rounded">
+                    <a-icon :icon="icon.name" class="pointer" @click="_showModal('modal-iconPreview', icon.name)" />
+                  </div>
+                  <div class="icon-text-hold">
+                    {{ icon.name }}
+                  </div>
+                </div>
+              </div>
+            </Tab>
+          </Tabs>
+        </Card>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>icon</code></td>
+                  <td>String</td>
+                  <td class="text-nowrap">What icon needs to be displayed</td>
+                  <td class="text-nowrap"><span class="text-primary">null</span>, any icon name as per above
+                    descriptions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+  <FooterNav prevNav="/components/animations" prevTitle="Animations" />
+</div>

@@ -1,0 +1,109 @@
+<div class="table-scroll-view">
+  <div class="row">
+    <div class="col">
+      <div class="table-hold">    
+        <Card class="table-card fade-in">
+          <a-table :headers="columns" :rows="rowsTable" responsive hover>      
+            <template v-slot:items="{ row }">
+              <td class="text-nowrap">{{ row.date }}</td>  
+              <td class="text-nowrap">{{ row.loan_id }}</td>              
+              <td class="text-nowrap">{{ row.city }}</td>  
+              <td class="text-nowrap">{{ row.curr }}</td>  
+              <td class="text-nowrap text-end">{{ row.amt }}</td>  
+              <td class="text-nowrap text-end">{{ row.rate }}</td> 
+              <td class="text-nowrap text-end">{{ row.interest }}</td> 
+              <td class="text-nowrap text-end">{{ row.total }}</td> 
+              <td><a-drop-down :options="options" defaultValue="Select Action" size="small" /></td>       
+            </template>
+            <template v-slot:no-data>
+              <span>No data</span>
+            </template>
+          </a-table>
+        </Card>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-6">
+    <div class="col">
+      <div class="table-hold">    
+        <Card class="table-card fade-in">
+          <a-table :headers="columns" :rows="rows" :pagination="pagination" :sort="sort" responsive>
+            <template v-slot:table-actions>
+              <a-button secondary size="small">secondary button</a-button>
+              <a-button primary size="small">primary button</a-button>
+            </template>             
+            <template v-slot:items="{ row }">
+              <td class="text-nowrap">{{ row.date }}</td>  
+              <td class="text-nowrap">{{ row.loan_id }}</td>              
+              <td class="text-nowrap">{{ row.city }}</td>  
+              <td class="text-nowrap">{{ row.curr }}</td>  
+              <td class="text-nowrap text-end">{{ row.amt }}</td>  
+              <td class="text-nowrap text-end">{{ row.rate }}</td> 
+              <td class="text-nowrap text-end">{{ row.interest }}</td> 
+              <td class="text-nowrap text-end">{{ row.total }}</td> 
+              <td><a-drop-down :options="options" defaultValue="Select Action" size="small" /></td>   
+            </template>
+
+            <template v-slot:no-data>
+              <span>No data</span>
+            </template>
+          </a-table>          
+        </Card>
+      </div>
+    </div>
+  </div>  
+
+
+  <CardCode>
+  <textarea class="form-control" rows="3">
+<a-table :headers="columns" :rows="items" :footers="footers" responsive scrollable hover>
+  <template v-slot:items="{ row }">
+    <td class="text-nowrap">{row.date}</td>  
+    <td class="text-nowrap">{row.amount}</td>                  
+  </template>
+  <template v-slot:no-data>
+    <span>No data</span>
+  </template>
+</a-table>
+
+<div class="table-responsive table-scroll">
+  <table class="table align-middle table-hover">
+    <thead>
+      <tr>
+        <th class="col-sortable text-nowrap"><span>Date</span>
+          <!--v-if-->
+        </th>
+        <th class="col-sortable text-nowrap"><span>Amount</span>
+          <!--v-if-->
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-nowrap">11 Sep 2021</td>
+        <td class="text-nowrap">1765632080</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap">19 Aug 2021</td>
+        <td class="text-nowrap">9917043209</td>
+      </tr>
+    </tbody>
+    <tfoot class="footer-one">
+      <tr>
+        <th class=""><span>Total</span></th>
+        <th class="text-end"><span>9145222.87</span></th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+</textarea>
+  </CardCode>
+
+
+
+
+
+
+
+</div>

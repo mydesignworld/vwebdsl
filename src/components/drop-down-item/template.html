@@ -1,0 +1,3 @@
+<div class="item" :class="{ 'current' : selected, 'disabled' : disabled }" @click="_onClick" :title="title" :data-toggle="!!disabled ? title : title">
+    {{ model.label }}
+</div>

@@ -1,0 +1,42 @@
+<div class="balances-cdbc-view tiles balances">
+  <div class="row">
+    <div class="col-12">
+      <div class="grid">
+        <div v-for="(item,index) in cdbcFilter" :key="item.id">
+          <div class="cols">
+            <div class="card info-card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="badge rounded-pill bg-primary">{{ item.curr }}</span>
+                <span class="fw-bolder">{{ item.entity }}</span>
+              </div>     
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ item.total.toLocaleString() }}</h5>
+                <div class="card-text">
+                  <div class="data-row">
+                    <div>On Hold settlement</div>
+                    <div>{{ item.on_hold_set.toLocaleString() }}</div>            
+                  </div>
+                  <div class="data-row">
+                    <div>On Hold Credit</div>
+                    <div>{{ item.on_hold_credit.toLocaleString() }}</div>            
+                  </div>
+                  <div class="data-row">
+                    <div>Available Credit</div>
+                    <div>{{ item.avail_credit.toLocaleString() }}</div>            
+                  </div>
+                  <div class="data-row">
+                    <div>Account</div>
+                    <div>{{ item.account }}</div>            
+                  </div>
+                </div>
+                <div class="body-footer">
+                  <a-drop-down :options="options" defaultValue="Select Action" size="small" class="w-100" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                                                                                                                      
+      </div>                   
+    </div>
+  </div>
+</div>

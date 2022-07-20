@@ -1,0 +1,31 @@
+<!--
+<component :is="type" :type="type" :href="href" data-bs-toggle="modal" :data-bs-target="['#' + id]" :class="[modalTrigger]">
+  {{triggerTitle}}
+</component>
+-->
+
+<component v-if="autoClose" :is="type" :type="type" :href="href" :class="[modalTrigger, triggerHide]" :id="'trigger-' + [id]" @click="showModalTimeOut('modal-' + [id])">
+  {{triggerTitle}}
+</component>
+<component v-else :is="type" :type="type" :href="href" :class="[modalTrigger, triggerHide]" :id="'trigger-' + [id]" @click="showModal('modal-' + [id])">
+  {{triggerTitle}}
+</component>
+
+<!-- Modal -->
+<div class="modal fade" v-bind:data-bs-backdrop="isStatic" data-bs-keyboard="false" v-bind="$attrs" :class="[type]" :id="'modal-' + [id]" tabindex="-1" :aria-labelledby="[id + 'Label']" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" :id="[id + 'Label']">{{title}}</h5>
+        <a-icon class="modal-close" icon="x" data-bs-dismiss="modal" aria-label="Close" v-if="closeIcon" @click="closeModal('modal-' + [id])" />
+      </div>
+      <div class="modal-body">
+        <slot/>
+      </div>
+      <div class="modal-footer">
+          <a-button primary v-if="!hideActions" @click="saveModal('modal-' + [id])">Save Changes</a-button>
+          <a-button v-if="!hideActions" @click="closeModal('modal-' + [id]), hideModal('modal-' + [id])">Cancel</a-button>
+      </div>
+    </div>
+  </div>
+</div>

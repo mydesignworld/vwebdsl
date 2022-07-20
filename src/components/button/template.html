@@ -1,0 +1,4 @@
+<button class="btn" :type="type" :disabled="disabled" :class="_btnStyle" @click.prevent="_onClick">
+    <slot></slot>
+    <a-icon v-if="icon" :icon="icon" />
+</button>

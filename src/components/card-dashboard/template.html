@@ -1,0 +1,11 @@
+<div class='card info-card' :class="card, animated, { 'active-card': activeCard }" @click="actionCard ? handleClick() : null">
+    <div class="card-header d-flex align-items-center">
+        <slot name="header"></slot>
+    </div>  
+    <div class="card-body d-flex flex-column" @click="actionBody ? handleClick() : null">
+        <slot name="body"></slot>
+        <a-icon v-if="!activeCard && actionIcon" icon="chevron-down" class="text-primary action-icon" @click="activeCard = !activeCard" />
+        <a-icon v-if="activeCard" icon="chevron-up" class="text-primary action-icon" @click="activeCard = !activeCard" />         
+        <span @click="activeCard = !activeCard" v-if="actionText" class="mt-1"><i class="bi bi-chevron-down"></i> View More</span>
+    </div>
+</div>

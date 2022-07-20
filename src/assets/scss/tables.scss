@@ -1,0 +1,383 @@
+.table {
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+
+.table-hold {
+    display: inline-grid;
+}
+
+.table-intro {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 10px;
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-bold);
+}
+
+.table thead {
+    background-color: #fff;
+}
+
+.table > thead th,
+.table > tfoot th,
+.table-scroll tfoot th,
+.table-scroll tfoot td {
+    background-color: rgba(var(--color-primary-rgb), .05);
+    vertical-align: middle;
+}
+
+.table.width-auto {
+    width: auto;
+}
+
+.table tr td,
+.table tr th {
+    height: var(--spacer-48);
+    padding: var(--spacer-4) var(--spacer-0) var(--spacer-4) var(--spacer-20);
+    border-color: var(--table-border-color);
+    font-size: var(--font-size-11);
+}
+
+.table tr th {
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-bold);
+}
+
+thead .text-end .d-flex {
+    justify-content: flex-end;
+}
+
+.table thead th {
+    border-bottom: 0;
+}
+
+.table-blocks .sortable th {
+    padding: 10px 17px;
+}
+
+.table-blocks th:not(.col-sortable) {
+    display: none;
+}
+
+.table > :not(:first-child) {
+    border-top: 0;
+}
+
+.table tr td:first-child,
+.table tr th:first-child {
+    padding-left: var(--spacer-16);
+}
+
+.table tr td:last-child,
+.table tr th:last-child {
+    padding-right: var(--spacer-16);
+}
+
+.col-sortable span,
+.col-sortable .a-icon {
+    cursor: pointer;
+}
+
+.table th .a-icon  {
+    width: .5rem;
+    height: .5rem;
+    margin: -1px 0 -2px 4px;
+    color: var(--color-primary);
+    stroke: currentColor;
+    stroke-width: 1;
+}
+
+.table-pagination .btn-xs {
+    min-width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    padding: 0 0 1px;
+}
+
+.table-pagination .btn-xs .a-icon {
+    margin: 0;
+    font-size: 8px;
+    stroke: currentColor;
+    stroke-width: 1px;
+}
+
+td .select-box {
+    margin: 0;
+}
+
+.table-scroll {
+    max-height: 529px;
+    overflow-y: auto;
+}
+
+.table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table-hover > tbody > tr {
+    transition: .8s;
+}
+
+.table-pagination {
+    margin-bottom: -8px;
+    padding: 14px 12px 0 0;
+}
+
+tfoot {
+    border-top: hidden;
+}
+
+.table-scroll tfoot {
+    position: sticky;
+    bottom: -1px;
+    z-index: 4;
+    background-color: #fff;
+}
+
+/* stylelint-disable-next-line selector-max-compound-selectors */
+.table-hover > tbody > tr:hover > * {
+    --bs-table-accent-bg: none;
+    background-color: var(--table-hover-color);
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 15px;
+    height: 5px;
+    overflow: visible;
+}
+  
+.table-scroll::-webkit-scrollbar-track {
+    margin: 52px 0 0;
+    border-left: 12px solid #fff;
+    border-radius: 0;
+    background: #eee;
+}
+  
+.table-scroll::-webkit-scrollbar-thumb {
+    border-left: 12px solid #fff;
+    border-radius: 0;
+    background: #8c8c8c;
+}
+
+.scroll-five .table-scroll {
+    max-height: 290px;
+}
+
+.card.table-card {
+    display: inline-flex;
+    max-width: 100%;
+}
+
+.card-body > .table-component {
+    padding: 28px 4px;
+}
+
+.table-component > .table-actions {
+    margin: -42px 9px 9px 0;
+    text-align: right;
+}
+
+.table-component > .table-actions.scroll-actions {
+    margin-right: 25px;
+}
+
+.table-component > .table-load {
+    margin: 6px 0 -36px;
+    text-align: center;
+}
+
+.card.table-card .card-title {
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.card.table-card .card-title h5 {
+    margin-bottom: 0;
+}
+
+.card.table-card .card-title .actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-bold);
+}
+
+.card.table-card .card-title button {
+    margin: .2rem 0 .2rem .5rem;
+}
+
+.card.table-card .card-body .card-title {
+    height: 52px;
+    margin-top: -52px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: .25rem;
+}
+
+.tiles .card.table-card.table-blocks {
+    display: flex;
+    border: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.tiles .card.table-card.table-blocks .card-body {
+    padding: 0;
+}
+
+.table-blocks table {
+    display: block;
+    width: 100%;
+}
+
+.table-blocks table tbody {
+    display: grid;
+    align-items: start;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fit, 276px);
+    justify-content: start;
+}
+
+.table-blocks table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+/* stylelint-disable-next-line selector-max-compound-selectors */
+.table-blocks .sortable thead tr {
+    display: block;
+    margin-bottom: 18px;
+    padding: 10px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.table-blocks table tr {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 20px 24px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    background-color: var(--body-card-color);
+}
+
+/* stylelint-disable-next-line selector-max-compound-selectors */
+.table-blocks .table-hover > tbody > tr:hover > *  {
+    --bs-table-accent-bg: none;
+    background-color: var(--body-card-color);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.table-blocks table td {
+    display: flex;
+    height: auto;
+    margin-bottom: var(--spacer-12);
+    padding: 0;
+    border-bottom: 0;
+    font-size: var(--font-size-10);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--font-size-10);
+    text-align: right;
+}
+
+.table-blocks table td::before {
+    content: attr(data-label);
+}
+
+[data-label]::before {
+    margin-right: auto;
+    padding-right: 10px;
+}
+
+[data-label='Currency']::before,
+[data-label='Entity']::before,
+[data-label='Total']::before {
+    display: none;
+}
+
+.table-blocks .curr {
+    display: inline-block;
+    align-self: start;
+    min-width: 34px;
+    height: var(--spacer-24);
+    margin-bottom: 0;
+    padding: var(--spacer-8) var(--spacer-0);
+    border-radius: 50rem;
+    color: #fff;
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    line-height: 1;
+    text-align: center;
+    background-color: var(--color-primary);
+    vertical-align: baseline;
+}
+
+/* stylelint-disable-next-line selector-max-compound-selectors */
+.table-blocks table tr:hover .curr {
+    color: #fff;
+    background-color: var(--color-primary);
+}
+
+.table-blocks .sortable thead {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.table-blocks .entity {
+    align-self: end;
+    margin-top: -18px;
+    margin-bottom: 0;
+}
+
+.table-blocks .total {
+    margin: 23px 0 20px;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 23px;
+}
+
+/* stylelint-disable-next-line selector-no-qualifying-type  */
+.table-blocks table td.action {
+    margin-bottom: 0;
+    padding: 8px 0 0;
+}
+
+.table-toggle {
+    position: absolute;
+    color: var(--color-primary);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.table-toggle,
+.table-toggle.bi-grid-3x3-gap-fill {
+    top: -4px;
+    left: 2px;
+}
+
+@media (min-width: 576px) {
+    .table-toggle {
+        top: 54px;
+        left: 302px;
+    }
+    
+    .table-toggle.bi-grid-3x3-gap-fill {
+        top: 28px;
+        right: -30px;
+        left: auto;
+    }
+}

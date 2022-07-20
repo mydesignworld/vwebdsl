@@ -1,0 +1,131 @@
+:root {
+    --color-primary: #5814a4;
+    --color-primary-rgb: 88, 20, 164;
+    --color-primary-900: #3d0478;
+    --color-primary-900-rgb: 61, 4, 120;
+    --color-primary-300: #8c1bff;
+    --color-primary-300-rgb: 140, 27, 255;
+    --color-primary-light: rgba(var(--color-primary-rgb), .08);
+    --color-secondary: #e8e8e8;
+    --color-secondary-rgb: 232, 232, 232;
+    --color-success: #5b9c14;
+    --color-success-rgb: 91, 156, 20;
+    --color-caution: #f5a623;
+    --color-caution-rgb: 245, 166, 35;
+    --color-danger: #d0021b;
+    --color-danger-rgb: 208, 2, 27;
+    --color-warning: #d0021b;
+    --color-warning-rgb: 208, 2, 27;
+    --color-tertiary: #333;
+    --color-tertiary-rgb: 51, 51, 51;
+    --color-button-text: #fff;
+    --color-light: #fff;
+    --color-white: #fff;
+    --color-dark: #333;
+    --color-dark-rgb: 51, 51, 51;
+    --link-color: var(--color-tertiary);
+    --link-hover-color: rgba(var(--color-tertiary-rgb), .6);
+    --body-bg: #f8f8f8;
+    --body-color: #333;
+    --body-border-color: #dee2e6;
+    --body-sidebar: #fff;
+    --body-card-color: #fff;
+    --footer-bg: #333;
+    --footer-color: #fff;
+    --form-label-color: #ccc;
+    --input-bg: var(--color-white);
+    --input-border-focus: var(--color-primary);
+    --text-color-primary: var(--color-primary);
+    --logo: url(../images/logos/adhara_logo.svg) no-repeat center / 180px;
+    --logo-adhara: url(../images/logos/adhara_logo.svg) no-repeat center / 180px;
+    --logo-brand-tab: url(../images/logos/fnality_tab.png) no-repeat;
+    --logo-bank: url(../images/logos/usclearer.svg) no-repeat center / 180px;
+    --table-border-color: #eee;
+    --table-hover-color: var(--body-bg);
+
+    --font-size-6: .375rem;
+    --font-size-8: .5rem;
+    --font-size-9: .563rem;
+    --font-size-10: .625rem;
+    --font-size-11: .688rem;
+    --font-size-12: .75;
+    --font-size-14: .875rem;
+    --font-size-16: 1rem;
+    --font-size-24: 1.5rem;
+    --font-size-30: 1.875rem;
+    --font-size-56: 3.5rem;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+    --font-weight-bolder: 700;
+
+    --spacer-0: 0;
+    --spacer-3: .188rem;
+    --spacer-4: .25rem;
+    --spacer-5: .313rem;
+    --spacer-6: .375rem;
+    --spacer-8: .5rem;
+    --spacer-10: .625rem;
+    --spacer-12: .75rem;
+    --spacer-16: 1rem;
+    --spacer-20: 1.25rem;
+    --spacer-24: 1.5rem;
+    --spacer-32: 2rem;
+    --spacer-40: 2.5rem;
+    --spacer-48: 3rem;
+
+    --radius-xl: 50rem;
+
+    --button-font-size: var(--font-size-8);
+    --button-font-weight: var(--font-weight-bolder);
+    --button-height: var(--spacer-40);
+    --button-xs-height: var(--spacer-24);
+    --button-sm-height: var(--spacer-32);
+    --button-lg-height: var(--spacer-48);
+    --button-radius: var(--radius-xl);
+
+    --input-lg-height: var(--spacer-40);
+}
+
+[theme="pinkbank"] {
+    --color-primary: #de8baf;
+    --color-primary-rgb: 222, 139, 175;
+    --color-primary-900: #ff83b9;
+    --color-primary-900-rgb: 255, 131, 185;
+    --color-primary-300: #ffafd1;
+    --color-primary-300-rgb: 255, 175, 209;
+    --logo: url(../images/logos/bank-pink.png) no-repeat center / 350px;   
+}
+
+[theme="bluebank"] {
+    --color-primary: #081f85;
+    --color-primary-rgb: 8, 31, 133;
+    --color-primary-900: #061765;
+    --color-primary-900-rgb: 6,23,101;
+    --color-primary-300: #0d2dbc;
+    --color-primary-300-rgb: 13,45,188; 
+    --logo: url(../images/logos/bank-blue-08.png) no-repeat center / 210px;
+    --logo-bank: url(../images/logos/bank-a-01.svg) no-repeat center / 180px;
+}
+
+[theme="blackbank"] {
+    --color-primary: #202020;
+    --color-primary-rgb: 32, 32, 32;
+    --color-primary-900: #000;
+    --color-primary-900-rgb: 0, 0, 0;
+    --color-primary-300: #6c6c6c;
+    --color-primary-300-rgb: 108, 108, 108;
+    --color-secondary: #676767;
+    --body-bg: #252525;
+    --body-color: #aeaeae;
+    --body-border-color: #5f5f5f;
+    --body-sidebar: #252525;
+    --body-card-color: #000;
+    --footer-bg: #4c4c4c;
+    --form-label-color: #ccc;
+    --input-bg: var(--body-card-color);
+    --input-border-focus: var(--form-label-color);
+    --text-color-primary: #fff;
+    --logo: url(../images/logos/bank-black-01.png) no-repeat center / 180px;  
+}

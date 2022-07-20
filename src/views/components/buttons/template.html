@@ -1,0 +1,110 @@
+<div class="buttons-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">Buttons are used to initialize an action. Button labels express what action will occur when the user interacts with it.
+    </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <Card title="Discoverable" icon="search" card="primary" animate>
+          <p class="card-text">Buttons should be easy to find among other components</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Clear" icon="clipboard-check" card="primary" animate>
+          <p class="card-text">A button’s action and state should be clear</p>
+        </Card>
+      </div>
+      <div class="col">
+        <Card title="Emphasis" icon="layers-half" card="primary" animate>
+          <p class="card-text">Different button styles express different emphasis levels
+          </p>
+        </Card>
+      </div>
+    </div>
+
+    <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky id="buttonsTabs">
+          <Tab title="Primary" class="fade-in">
+            <btn-primary />
+          </Tab>
+          <Tab title="Secondary" class="fade-in">
+            <btn-secondary />
+          </Tab>
+          <Tab title="Tertiary" class="fade-in">
+            <btn-tertiary />
+          </Tab>
+        </Tabs>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <Card title="Options">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>primary</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set button primary L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>secondary</code></td>
+                  <td>Boolean</td>
+                  <td>Will set button secondary L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>                
+                <tr>
+                  <td><code>state</code></td>
+                  <td>String</td>
+                  <td>Different states the button can be in. It will change the button color</td>
+                  <td><span class="text-primary">default</span>, success, warning</td>
+                </tr>
+                <tr>
+                  <td><code>size</code></td>
+                  <td>String</td>
+                  <td>Will determine the button size</td>
+                  <td><span class="text-primary">normal</span>, small, xsmall</td>
+                </tr>
+                <tr>
+                  <td><code>icon</code></td>
+                  <td>String</td>
+                  <td>Will add any of our predefined icons to the button. E.g. <code>icon="bi-arrow-clockwise"</code>
+                  </td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>
+                <tr>
+                  <td><code>disabled</code></td>
+                  <td>Boolean</td>
+                  <td>Will set button to disabled state with no funtionality</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <FooterNav prevNav="/components/badges" prevTitle="Badges" nextNav="/components/inputs" nextTitle="Input Fields" />
+
+</div>

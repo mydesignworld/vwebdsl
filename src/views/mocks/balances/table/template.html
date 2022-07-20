@@ -1,0 +1,20 @@
+<div class="table-scroll-view tiles balances">
+  <Card class="table-card mb-8" :class="{'table-blocks': blockView, 'table-default': !blockView}">
+    <i class="table-toggle bi" :class="{'bi-table': blockView, 'bi-grid-3x3-gap-fill': !blockView}" @click="handleToggle"></i>
+    <a-table :headers="columns" :rows="items" hover :sort="sort" responsive>
+      <template v-slot:items="{ row }">
+        <td class="text-nowrap curr" data-label="Currency">{{ row.curr }}</td>  
+        <td class="text-nowrap entity" data-label="Entity">{{ row.entity }}</td>              
+        <td class="text-nowrap text-end total" data-label="Total">{{ row.total.toLocaleString() }}</td> 
+        <td class="text-nowrap text-end" data-label="On Hold settlement">{{ row.on_hold_set.toLocaleString() }}</td>  
+        <td class="text-nowrap text-end" data-label="On Hold Credit">{{ row.on_hold_credit.toLocaleString() }}</td>  
+        <td class="text-nowrap text-end" data-label="Available Credit">{{ row.avail_credit.toLocaleString() }}</td> 
+        <td class="text-nowrap text-end" data-label="Account">{{ row.account }}</td> 
+        <td class="action"><a-drop-down :options="options" defaultValue="Select Option" size="small" class="w-100"/></td>       
+      </template>
+      <template v-slot:no-data>
+        <span>No data</span>
+      </template>
+    </a-table>
+  </Card>
+</div>

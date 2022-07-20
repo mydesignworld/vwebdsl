@@ -1,0 +1,16 @@
+<div class="balance-view">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <Tabs sticky class="header-tabs" @tabChanged="triggerTab" ref="pledgeTabs">                                       
+            <Tab title="Pledges" class="fade-in">
+              <balances-table-view/>
+            </Tab>
+            <Tab title="Requests" class="fade-in">
+              <balances-history-table-view/>
+            </Tab>                                   
+          </Tabs>               
+        </div>
+      </div>
+  </div>
+</div>
