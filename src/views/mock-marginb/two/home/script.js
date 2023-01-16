@@ -1,7 +1,7 @@
 import AButton          from '@/components/button/';
 import ADropDown        from '@/components/drop-down/';
 import AIcon            from '@/components/icon/';
-import Card             from '@/components/card/';
+import ACard            from '@/components/card/';
 import Modal            from '@/components/modal/';
 
 
@@ -11,7 +11,7 @@ export default {
         AButton,
         ADropDown,
         AIcon,
-        Card,
+        ACard,
         Modal
     },
     methods: {

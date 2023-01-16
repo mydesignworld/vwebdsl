@@ -4,7 +4,7 @@ import ADropDown                  from '@/components/drop-down/';
 import AIcon                      from '@/components/icon/';
 import AInput                     from '@/components/input/';
 import ATable                     from '@/components/tables/table/';
-import Card                       from '@/components/card/';
+import ACard                      from '@/components/card/';
 import Modal                      from '@/components/modal/';
 import methods                    from '../../../mixins/shared';
 import options                    from '../../../mixins/options';
@@ -19,7 +19,7 @@ export default {
         AIcon,
         AInput,
         ATable,
-        Card,
+        ACard,
         Modal
     },
 };

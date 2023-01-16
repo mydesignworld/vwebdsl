@@ -1,7 +1,16 @@
-<div class="card info-card" :class="[card, { 'animated' : animate }]">
-    <div class="card-body">
-        <a-icon v-if="icon" class="icon-md text-primary" :icon="icon" />
+<div class="card" :class="_cardStyle">
+    <div class="confirm-result justify-content-between align-items-center inner" v-if="this.$slots.confirmation">
+        <slot name="confirmation"></slot>
+    </div>
+    <div class="card-header d-flex align-items-center" v-if="this.$slots.header">
+        <slot name="header"></slot>
+    </div>      
+    <div class="card-body card-body d-flex flex-column">
+        <a-icon class="icon-md text-primary" :icon="icon" v-if="icon" />
         <h5 class="card-title" v-if="title">{{ title }}</h5>
         <slot></slot>
     </div>
+    <div class="card-footer d-flex align-items-center" v-if="this.$slots.footer">
+        <slot name="footer"></slot>
+    </div>    
 </div>

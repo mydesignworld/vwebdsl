@@ -8,32 +8,32 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Focused" icon="eye" card="primary" animate>
+        <a-card title="Focused" icon="eye"  hover intro class="primary">
           <p class="card-text">Animation should focus the user's attention on what is important, without creating unnecessary distraction.</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Informative" icon="clipboard-check" card="primary" animate>
+        <a-card title="Informative" icon="clipboard-check"  hover intro class="primary">
           <p class="card-text">Animation informs users by highlighting relationships between elements, action availability, and action outcomes.
           </p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Expressive" icon="megaphone" card="primary" animate>
+        <a-card title="Expressive" icon="megaphone"  hover intro class="primary">
           <p class="card-text">Animations is part of a user journey, adds character to common interactions, and can express a brand’s style.</p>
-        </Card>
+        </a-card>
       </div>
     </div>
     <div class="row mt-6">
       <div class="col">
-        <Card title="Preview">
-          <div class="d-flex flex-column flex-md-row bd-highlight">
+        <a-card title="Preview">
+          <div class="d-flex flex-column flex-md-row bd-highlight mt-5">
             <div class="p-2 bd-highlight">
               <a-drop-down :options="options" @change='_animationSelected' defaultValue="Select Animation" />
             </div>
             <div class="p-2 animation">
               <div :class="selected" class="d-flex">
-                <Card card="primary" class="animate-content">
+                <a-card intro  class="animate-content primary">
                   <div v-if="selected">
                     <div><b>CSS Class:</b> {{ selected }}</div>
                     <div>
@@ -48,11 +48,12 @@
                     </div>
                   </div>
                   <div v-else>For more details and how to use the animation,<br/>please select one from the drop-down.</div>
-                </Card>
+                </a-card>
+                <div class="hold-icon"><a-icon icon="adhara-refresh" /></div>
               </div>
             </div>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
 
@@ -68,8 +69,8 @@
     
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr>
@@ -87,7 +88,7 @@
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>

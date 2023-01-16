@@ -1,157 +1,161 @@
 <div class="drop-downs-view">
 
-  <div class="container-xxl pt-1 pt-md-4">
-      <p class="display-4">{{ $route.meta.title }}</p>
-      <p class="mt-5">A drop down displays a list of choices on a temporary surface. They appear when users interact
-          with a button, action, or other control.</p>
-  </div>
+    <div class="container-xxl pt-1 pt-md-4">
+        <p class="display-4">{{ $route.meta.title }}</p>
+        <p class="mt-5">A drop down displays a list of choices on a temporary surface. They appear when users interact
+            with a button, action, or other control.</p>
+    </div>
 
-  <div class="container-xxl pt-5">
-      <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
-          <div class="col">
-              <Card title="Nimble" icon="search" card="primary" animate>
-                  <p class="card-text">Drop downs should be clearly visible, easy to open, close, and interact
-                      with.</p>
-              </Card>
-          </div>
-          <div class="col">
-              <Card title="Contextual" icon="clipboard-check" card="primary" animate>
-                  <p class="card-text">The content of a drop down should be suited to user needs.</p>
-              </Card>
-          </div>
-          <div class="col">
-              <Card title="Scannable" icon="speedometer2" card="primary" animate>
-                  <p class="card-text">Items within a drop down should be understandable and easy to scan.</p>
-              </Card>
-          </div>
-      </div>
-
-
-      <div class="row mt-6">
-          <div class="col">
-              <Tabs sticky>
-                  <Tab title="Standard" class="fade-in">
-                      <drop-down/>
-                  </Tab>
-                  <Tab title="Small" class="fade-in">
-                      <drop-down-small/>
-                  </Tab>
-              </Tabs>
-          </div>
-      </div>
-
-      <div class="row mt-6">
-          <div class='col'>
-              <Card title='Options model'>
-                  <p class='card-text'>Each option for <code>Drop Downs</code> must follow the following structure:</p>
-                  <div class="table-responsive">
-                      <table class="table table-bordered table-hover mb-0">
-                          <thead>
-                              <tr>
-                                  <th scope="col" class="col">Property</th>
-                                  <th scope="col" class="col">Type</th>
-                                  <th scope="col" class="col-auto">Description</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>id</td>
-                                  <td>String</td>
-                                  <td>Option unique identifier</td>
-                              </tr>
-                              <tr>
-                                  <td>value</td>
-                                  <td>String</td>
-                                  <td>Option value</td>
-                              </tr>
-                              <tr>
-                                  <td>label</td>
-                                  <td>String</td>
-                                  <td>Option text to display</td>
-                              </tr>
-                              <tr>
-                                  <td>disable</td>
-                                  <td>Boolean or Function</td>
-                                  <td>Whether this option is disabled or not.<br/>In case of being a
-                                      <code>Function</code>, its interface is <code>function({Object model}) {}</code></td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </Card>
-          </div>
-      </div>
-
-      <div class="row mt-6">
-          <div class="col">
-              <Card title="Properties">
-                  <div class="table-responsive">
-                      <table class="table table-bordered table-hover mb-0">
-                          <thead>
-                          <tr>
-                              <th scope="col" class="col">Name</th>
-                              <th scope="col" class="col">Type</th>
-                              <th scope="col" class="col-auto">Description</th>
-                              <th scope="col" class="col">Accepted</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                              <td><code>:options</code></td>
-                              <td>Array</td>
-                              <td>Will populate the options within the Drop Down/Select.<br/>
-                              This is <strong>required</strong>.</td>
-                              <td class="text-nowrap">See option's model description above.</td>
-                          </tr>
-                          <tr>
-                              <td><code>size</code></td>
-                              <td>String</td>
-                              <td>Will determine the drop-down size</td>
-                              <td><span class="text-primary">normal</span>, small</td>
-                          </tr>
-                          <tr>
-                              <td><code>defaultValue</code></td>
-                              <td>String</td>
-                              <td>Will determine the default value of the selected option as well as the selected
-                                  value. E.g.
-                                  <code>defaultValue="Select Account"</code>
-                              </td>
-                              <td class="text-nowrap"><span class="text-primary">Select Option</span>, "Any String"
-                              </td>
-                          </tr>
-                          <tr>
-                              <td><code>disabled</code></td>
-                              <td>Boolean</td>
-                              <td>Will set drop-down to disabled state with no functionality</td>
-                              <td><span class="text-primary">false</span>, true</td>
-                          </tr>
-                          <tr>
-                              <td><code>model</code></td>
-                              <td>Object</td>
-                              <td>Associated reference to the drop-down selector</td>
-                              <td></td>
-                          </tr>
-                          <tr>
-                              <td><code>id</code></td>
-                              <td>String</td>
-                              <td>Drop Down unique DOM identifier</td>
-                              <td></td>
-                          </tr>
-                          <tr>
-                              <td><code>name</code></td>
-                              <td>String</td>
-                              <td>Drop Down unique form identifier</td>
-                              <td></td>
-                          </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </Card>
-          </div>
-      </div>
+    <div class="container-xxl pt-5">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+            <div class="col">
+                <a-card title="Nimble" icon="search" hover intro class="primary">
+                    <p class="card-text">Drop downs should be clearly visible, easy to open, close, and interact
+                        with.</p>
+                </a-card>
+            </div>
+            <div class="col">
+                <a-card title="Contextual" icon="clipboard-check" hover intro class="primary">
+                    <p class="card-text">The content of a drop down should be suited to user needs.</p>
+                </a-card>
+            </div>
+            <div class="col">
+                <a-card title="Scannable" icon="speedometer2" hover intro class="primary">
+                    <p class="card-text">Items within a drop down should be understandable and easy to scan.</p>
+                </a-card>
+            </div>
+        </div>
 
 
-  </div>
+        <div class="row mt-6">
+            <div class="col">
+                <Tabs sticky>
+                    <Tab title="Standard" class="fade-in">
+                        <drop-down />
+                    </Tab>
+                    <Tab title="Small" class="fade-in">
+                        <drop-down-small />
+                    </Tab>
+                </Tabs>
+            </div>
+        </div>
 
-  <FooterNav prevNav="/components/inputs" prevTitle="Input Fields" nextNav="/components/modals" nextTitle="Modals"/>
+        <div class="row mt-6">
+            <div class='col'>
+                <a-card title='Options model'>
+                    <p class='card-text  mt-5'>Each option for <code>Drop Downs</code> must follow the following
+                        structure:</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col">Property</th>
+                                    <th scope="col" class="col">Type</th>
+                                    <th scope="col" class="col-auto">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>String</td>
+                                    <td>Option unique identifier</td>
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>String</td>
+                                    <td>Option value</td>
+                                </tr>
+                                <tr>
+                                    <td>label</td>
+                                    <td>String</td>
+                                    <td>Option text to display</td>
+                                </tr>
+                                <tr>
+                                    <td>disable</td>
+                                    <td>Boolean or Function</td>
+                                    <td>Whether this option is disabled or not.<br />In case of being a
+                                        <code>Function</code>, its interface is <code>function({Object model}) {}</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </a-card>
+            </div>
+        </div>
+
+        <div class="row mt-6">
+            <div class="col">
+                <a-card title="Properties">
+                    <div class="table-responsive mt-5">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col">Name</th>
+                                    <th scope="col" class="col">Type</th>
+                                    <th scope="col" class="col-auto">Description</th>
+                                    <th scope="col" class="col">Accepted</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:options</code></td>
+                                    <td>Array</td>
+                                    <td>Will populate the options within the Drop Down/Select.<br />
+                                        This is <strong>required</strong>.</td>
+                                    <td class="text-nowrap">See option's model description above.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>size</code></td>
+                                    <td>String</td>
+                                    <td>Will determine the drop-down size</td>
+                                    <td><span class="text-primary">normal</span>, small</td>
+                                </tr>
+                                <tr>
+                                    <td><code>defaultValue</code></td>
+                                    <td>String</td>
+                                    <td>Will determine the default value of the selected option as well as the selected
+                                        value. E.g.
+                                        <code>defaultValue="Select Account"</code>
+                                    </td>
+                                    <td class="text-nowrap"><span class="text-primary">Select Option</span>, "Any
+                                        String"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>disabled</code></td>
+                                    <td>Boolean</td>
+                                    <td>Will set drop-down to disabled state with no functionality</td>
+                                    <td><span class="text-primary">false</span>, true</td>
+                                </tr>
+                                <tr>
+                                    <td><code>model</code></td>
+                                    <td>Object</td>
+                                    <td>Associated reference to the drop-down selector</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td>String</td>
+                                    <td>Drop Down unique DOM identifier</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>String</td>
+                                    <td>Drop Down unique form identifier</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </a-card>
+            </div>
+        </div>
+
+
+    </div>
+
+    <FooterNav prevNav="/components/checkboxes" prevTitle="Switches & Checkboxes" nextNav="/components/modals"
+        nextTitle="Modals" />
 </div>

@@ -1,11 +1,12 @@
-import AIcon from '../icon';
+import AIcon        from '../icon/index.vue';
 
 /**
- * @component   adhara-button       Presents a clickable <button/> component.
+ * @component   a-button       Presents a clickable <button/> component.
  * @property    {String}            state       State of this button, to know: 'success' or 'warning'
  * @property    {String|'norma'}    size        The size of this button, to know: 'xsmall', 'small' or 'normal'
  * @property    {String|'button'}   type        Type of button, to know: 'button', 'submit', 'clear', 'reset', 'cancel'
  * @property    {String}            icon        Icon to display within button
+ * @property    {String}            animateIcon Should the button icon animate, as per dsl animations.
  * @property    {Boolean|false}     primary     Whether this button is primary or not
  * @property    {Boolean|false}     secondary   Whether this button is secondary or not
  * @property    {Boolean|false}     light       Whether this button is light or not
@@ -13,8 +14,8 @@ import AIcon from '../icon';
  * @emits       {Event}             'click'     Click event triggered by native component
  */
 export default {
-    name          : 'a-button',
-    props         : {
+    name       : 'a-button',
+    props      : {
         type      : {
             type    : String,
             default : 'button',
@@ -25,17 +26,18 @@ export default {
              */
             validator(value = '')
             {
-                return value === 'button' || [ 'submit', 'clear', 'reset', 'cancel' ].includes(value);
+                return [ 'submit', 'reset', 'button' ].includes(value);
             }
         },
-        icon      : String,
-        primary   : Boolean,
-        secondary : Boolean,
-        light     : Boolean,
-        disabled  : Boolean,
-        size      : {
-            type    : String,
-            default : 'normal',
+        animateIcon : String,
+        icon        : String,
+        primary     : Boolean,
+        secondary   : Boolean,
+        light       : Boolean,
+        disabled    : Boolean,
+        size        : {
+            type        : String,
+            default     : 'normal',
             /**
              * Validator for property `size`
              * @param   {String|'normal'}   value   Value assigned
@@ -62,8 +64,8 @@ export default {
     },
     components : {
         AIcon
-    },  
-    computed : {
+    },
+    computed   : {
         /**
          * Computes all the button styles based on its configuration
          * @return {Array}  Set of styles
@@ -91,21 +93,19 @@ export default {
             styles.push(this.disabled ? 'disabled' : '');
 
             return styles.filter(Boolean);
-        }
-    },
-    methods  : {
+        },
+
         /**
-         * Handles native button click event
-         * @param   {Event} e   MouseEvent
-         * @emits   {Event} 'click'
+         * Computes the icon styles based on its configuration
+         * @return {Array}  Set of styles
          * @private
          */
-        _onClick()
+        _iconStyle()
         {
-            // @todo : When defined, add here click events middleware interceptor
-            // this.$emit('click', e);
-            // Arturo/Ronnie - We need to review this first,
-            // it's causing click events to fire twice - Same as for Drop Down
+            const styles = [];
+            styles.push(this.animateIcon ? this.animateIcon : null);
+
+            return styles.filter(Boolean);
         }
     }
 };

@@ -9,20 +9,20 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Discoverable" icon="search" card="primary" animate>
+        <a-card title="Discoverable" icon="search" hover intro class="primary">
           <p class="card-text">Buttons should be easy to find among other components</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Clear" icon="clipboard-check" card="primary" animate>
+        <a-card title="Clear" icon="clipboard-check" hover intro class="primary">
           <p class="card-text">A button’s action and state should be clear</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Emphasis" icon="layers-half" card="primary" animate>
+        <a-card title="Emphasis" icon="layers-half" hover intro class="primary">
           <p class="card-text">Different button styles express different emphasis levels
           </p>
-        </Card>
+        </a-card>
       </div>
     </div>
 
@@ -45,8 +45,8 @@
 
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr>
@@ -89,6 +89,12 @@
                   <td><span class="text-primary">icon=""</span></td>
                 </tr>
                 <tr>
+                  <td><code>animateIcon</code></td>
+                  <td>String</td>
+                  <td>Animate the icon inside the button when it appears</td>
+                  <td>As per dsl animations page</td>
+                </tr>                 
+                <tr>
                   <td><code>disabled</code></td>
                   <td>Boolean</td>
                   <td>Will set button to disabled state with no funtionality</td>
@@ -97,7 +103,7 @@
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
 

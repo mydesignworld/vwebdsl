@@ -1,5 +1,5 @@
 <div class="table-scroll-view tiles balances">
-  <Card class="table-card mb-8" :class="{'table-blocks': blockView, 'table-default': !blockView}">
+  <a-card class="mb-8 table-card" :class="{'table-blocks': blockView, 'table-default': !blockView}">
     <i class="table-toggle bi" :class="{'bi-table': blockView, 'bi-grid-3x3-gap-fill': !blockView}" @click="handleToggle"></i>
     <a-table :headers="columns" :rows="items" hover :sort="sort" responsive>
       <template v-slot:items="{ row }">
@@ -16,5 +16,5 @@
         <span>No data</span>
       </template>
     </a-table>
-  </Card>
+  </a-card>
 </div>

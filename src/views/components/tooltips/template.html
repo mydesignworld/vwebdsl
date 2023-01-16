@@ -1,0 +1,121 @@
+<div class="tooltips-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">Tooltips are used to display informative text or html when users hover over it, or tap to an
+      element.</p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <a-card title="Temporary" icon="pip" hover intro class="primary">
+          <p class="card-text">Tooltips appear on hover, focus, or touch, and disappear when cursor moves away from HTML element.</p>
+        </a-card>
+      </div>
+      <div class="col">
+        <a-card title="Paired" icon="chevron-bar-expand" hover intro class="primary">
+          <p class="card-text">A tooltips must be in close proximity to the element with which they are associated.</p>
+        </a-card>
+      </div>
+      <div class="col">
+        <a-card title="Helper" icon="pencil-square" hover intro class="primary">
+          <p class="card-text">Tooltips can include text or HTML and must be descriptive in relation to the content to which it's attached too.</p>
+        </a-card>
+      </div>
+    </div>
+    <div class="row mt-6">
+      <div class="col">
+        <a-card title="Preview">
+          <div class="input-wrapper mb-0 mt-5">
+            <a-tooltip primary title="Tooltip on <u><i>top</i></u>" class="me-2">
+              <a-button secondary size="small" class="me-0">Top</a-button>
+            </a-tooltip>
+            <a-tooltip primary title="Tooltip on <u><i>bottom</i></u>" position="bottom" class="me-2">
+              <a-button secondary size="small" class="me-0">Bottom</a-button>
+            </a-tooltip>
+            <a-tooltip primary title="Tooltip on <u><i>left</i></u>" position="left" class="me-2">
+              <a-button secondary size="small" class="me-0">Left</a-button>
+            </a-tooltip>
+            <a-tooltip primary title="Tooltip on <u><i>right</i></u>" position="right">
+              <a-button secondary size="small" class="me-0">Right</a-button>
+            </a-tooltip>
+          </div>
+        </a-card>
+      </div>
+    </div>
+
+
+    <CardCode>
+      <textarea class="form-control" rows="3">
+<a-tooltip title="Text or HTML">
+  Content
+</a-tooltip>
+
+<div class="tooltips" data-bs-custom-class="tooltip-primary" data-bs-toggle="tooltip" data-bs-html="true" 
+  data-bs-placement="top" title="Text or HTML">
+  Content
+</div>
+
+<div class="tooltip fade show tooltip-primary bs-tooltip-top" role="tooltip" id="tooltip785101" data-popper-placement="top"
+  style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(297.5px, -380.5px, 0px);">
+    <div class="tooltip-arrow" style="position: absolute; left: 0px; transform: translate3d(31px, 0px, 0px);"></div>
+    <div class="tooltip-inner">
+      Tooltip on <u><i>top</i></u>
+    </div>
+</div>
+
+</textarea>
+    </CardCode>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>title</code></td>
+                  <td>String</td>
+                  <td>This will be the content of the Tooltip, and can be text or HTML.</td>
+                  <td><span class="text-primary">Any String</span></td>
+                </tr>                
+                <tr>
+                  <td><code>primary</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set tooltip to primary (brand) L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>secondary</code></td>
+                  <td>Boolean</td>
+                  <td>Will set button to secondary L&F state</td>
+                  <td><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>position</code></td>
+                  <td>String</td>
+                  <td>Will determine the position of the tooltip</td>
+                  <td><span class="text-primary">top</span>, right, bottom, left</td>
+                </tr>                              
+              </tbody>
+            </table>
+          </div>
+        </a-card>
+      </div>
+    </div>
+
+
+  </div>
+
+  <FooterNav prevNav="/components/cards" prevTitle="Cards" />
+</div>

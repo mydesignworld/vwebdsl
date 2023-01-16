@@ -1,6 +1,6 @@
 import AInput           from '@/components/input/';
 import AIcon            from '@/components/icon/';
-import Card             from '@/components/card/';
+import ACard            from '@/components/card/';
 import CardCode         from '@/components/card-code/';
 import FooterNav        from '@/components/foot-nav/';
 import Modal            from '@/components/modal/';
@@ -12,7 +12,7 @@ export default {
     components  : {
         AIcon,
         AInput,
-        Card,
+        ACard,
         CardCode,
         FooterNav,
         Modal,
@@ -71,7 +71,7 @@ export default {
         _tabChanged(tabName)
         {
             this.tabName = tabName;
-            if (this.tabName == 'bootstrap icons')
+            if (this.tabName == 'Bootstrap Icons')
             {
                 this._showBootstrapIcons();
             }

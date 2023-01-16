@@ -4,27 +4,23 @@
         <div class="col-12">
           <div class="grid">
             <div class="cols g-col-2">
-              <div class="card info-card primary">
-                <div class="card-header d-flex justify-content-end">
-                </div>                
-                <div class="card-body">
+              <a-card intro class="primary">               
                   <div class="row h-100">
                     <div class="col-4 col-sm-2 col-lg-3 col-xl-3 align-self-center">
                       <a-icon icon="adhara-dc-comm" class="img-fluid" />
                     </div>
                     <div class="col">
-                      <div class="d-flex flex-column h-100 justify-content-center mt-n2">
+                      <div class="d-flex flex-column h-100 justify-content-center">
                         <h4 class="card-title fs-16">Welcome to Digital Cash (DC) Commander</h4>
                         <p class="card-text">DC Commander provides a consistent anchor for Treasury visibility of balances, management activities and real-time funding actions.</p>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+              </a-card>
             </div>
 
             <div class="cols">
-              <Card title="Real-time Fnality Fund Balances" icon="adhara-balances">
+              <a-card title="Real-time Fnality Fund Balances" icon="adhara-balances" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-balances')" />
                 <Modal ref="modal" id="balances" title="Real-time Fnality Fund Balances" trigger="text" closeIcon hideActions>
                   <p class="card-text">Seeing is believing. View all of your Fnality Funds balances across different FNPS (CCYs) and alongside other digital assets.</p>
@@ -33,11 +29,11 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>            
 
             <div class="cols">
-              <Card title="Wallet Activity" icon="adhara-wallet-activity">
+              <a-card title="Wallet Activity" icon="adhara-wallet-activity" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-wallet-activity')" />
                 <Modal id="wallet-activity" title="Wallet Activity" trigger="text" closeIcon hideActions>
                   <p class="card-text">Check the activity on each Fnality Funds Balance.</p>
@@ -46,11 +42,11 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>            
 
             <div class="cols">
-              <Card title="Daily Management: Transfers" icon="adhara-transfers">
+              <a-card title="Daily Management: Transfers" icon="adhara-transfers" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-daily-anagement')" />
                 <Modal id="wallet-activity" title="Wallet Activity" trigger="text" closeIcon hideActions>
                   <p class="card-text">Instruct Transfers in Fnality Funds to another Fnality participant, allowing Treasury to execute daily needs.</p>
@@ -59,13 +55,13 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>  
 
 
 
             <div class="cols">
-              <Card title="Treasury in Control: Defund" icon="adhara-defunds">
+              <a-card title="Treasury in Control: Defund" icon="adhara-defunds" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-defund')" />
                 <Modal id="defund" title="Treasury in Control: Defund" trigger="text" closeIcon hideActions>
                   <p class="card-text">Direct access for Treasury to instruct the defunding of a Fnality Funds balance.</p>
@@ -74,12 +70,12 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>              
             
           
             <div class="cols">
-              <Card title="Intraday Funding: Deliverable FX Swaps (PVP)" icon="adhara-funding-internal">
+              <a-card title="Intraday Funding: Deliverable FX Swaps (PVP)" icon="adhara-funding-internal" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-intraday-funding')" />
                 <Modal id="intraday-funding" title="Intraday Funding" trigger="text" closeIcon hideActions>
                   <p class="card-text">Adhara's FundNet to optimise funding using a pre-cleared Deliverable Settlement Liquidity FX Swap.</p>
@@ -88,11 +84,11 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>   
 
             <div class="cols">
-              <Card title="Settle Digital Asset Sales Instantly (DVP)" icon="adhara-funding-internal">
+              <a-card title="Settle Digital Asset Sales Instantly (DVP)" icon="adhara-funding-internal" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-dvp')" />
                 <Modal id="dvp" title="DVP" trigger="text" closeIcon hideActions>
                   <p class="card-text">Adhara's FundNet DVP extension to settle the sale of Digital Asset instantly in Fnality Funds.</p>
@@ -101,21 +97,21 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>  
 
             <div class="cols">
-              <Card title="Intraday Funding: Access Credit & Loans" icon="adhara-funding-internal">
+              <a-card title="Intraday Funding: Access Credit & Loans" icon="adhara-funding-internal" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-access-credit')" />
                 <Modal id="access-credit" title="Access Credit & Loans" trigger="text" closeIcon hideActions>
                   <p class="card-text">Using Adhara's FundNet, optimise intraday settlement funding using online credit.</p>
                 </Modal>          
                 <p class="card-text">Using Adhara's FundNet, optimise intraday settlement funding using online credit.</p>
-              </Card>
+              </a-card>
             </div>  
 
             <div class="cols">
-              <Card title="End of Day Statements" icon="adhara-reporting">
+              <a-card title="End of Day Statements" icon="adhara-reporting" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-end-of-day')" />
                 <Modal id="end-of-day" title="End of Day Statements" trigger="text" closeIcon hideActions>
                   <p class="card-text">Retrieve and download End of Day Statements for each Fnality Funds wallet.</p>
@@ -124,11 +120,11 @@
                 <div class="mt-auto">
                   <a-button secondary size="small" class="mt-auto" disabled>Coming Soon</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div> 
 
             <div class="cols">
-              <Card title="Fee Management" icon="adhara-fee-management">
+              <a-card title="Fee Management" icon="adhara-fee-management" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-fee-management')" />
                 <Modal id="fee-management" title="Fee Management" trigger="text" closeIcon hideActions>
                   <p class="card-text">View and manage fee balances.</p>
@@ -137,17 +133,17 @@
                 <div class="mt-auto">
                   <a-button primary size="small" class="mt-auto">Show more</a-button>
                 </div>
-              </Card>
+              </a-card>
             </div>  
 
             <div class="cols">
-              <Card title="Optimise internal funding: Hub Solutions" icon="adhara-funding-external">
+              <a-card title="Optimise internal funding: Hub Solutions" icon="adhara-funding-external" intro>
                 <a-icon class="icon-sm text-primary modal-trigger" icon="info-circle-fill" @click="showModal('modal-hub-solutions')" />
                 <Modal id="hub-solutions" title="Hub Solutions" trigger="text" closeIcon hideActions>
                   <p class="card-text">Use internal networks to manage liquidity across the group.</p>
                 </Modal>       
                 <p class="card-text">Use internal networks to manage liquidity across the group.</p>
-              </Card>
+              </a-card>
             </div>  
 
           </div>                   

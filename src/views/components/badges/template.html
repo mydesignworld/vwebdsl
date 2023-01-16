@@ -11,32 +11,32 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Compact & Discoverable" icon="arrows-collapse" card="primary" animate>
+        <a-card title="Compact & Discoverable" icon="arrows-collapse" intro class="primary" hover>
           <p class="card-text">A badge should be compact and represent discrete information only. <br/>
             Statuses should be easy to find among other components
           </p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Focused" icon="eye" card="primary" animate>
+        <a-card title="Focused" icon="eye" intro class="primary" hover>
           <p class="card-text">A badge should help highlight information and be clear and easy to scan. Different styles inform users of different status levels
           </p>
-        </Card>
+        </a-card>
       </div>      
       <div class="col">
-        <Card title="Relevant" icon="check-square" card="primary" animate>
+        <a-card title="Relevant" icon="check-square" intro class="primary" hover>
           <p class="card-text">Should have a clearly understood relationship to the content it supports</p>
-        </Card>
+        </a-card>
       </div>
     </div>
 
     <div class="row mt-6">
       <div class="col">
         <Tabs sticky id="badgeTabs">
-          <Tab title="Standard Badge">
+          <Tab title="Standard Badge" class="fade-in">
             <badge-standard />
           </Tab>
-          <Tab title="Status Badge">
+          <Tab title="Status Badge" class="fade-in">
             <badge-status />
           </Tab>
         </Tabs>
@@ -46,8 +46,8 @@
 
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr>
@@ -111,7 +111,7 @@
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
 

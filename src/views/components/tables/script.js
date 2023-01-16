@@ -1,6 +1,7 @@
-import Card                    from '@/components/card/';
+import ACard                   from '@/components/card/';
 import FooterNav               from '@/components/foot-nav/';
 import Tab                     from '@/components/tabs/tab/';
+import TableExperimentalView   from './table-experimental';
 import TablePaginationSortView from './table-pagination-sort';
 import TablePaginationView     from './table-pagination';
 import TableScrollSortView     from './table-scroll-sort';
@@ -10,8 +11,9 @@ import Tabs                    from '@/components/tabs/tabs/';
 export default {
     name       : 'tables-view',
     components : {
-        Card,
+        ACard,
         FooterNav,
+        TableExperimentalView,
         TablePaginationSortView,
         TablePaginationView,
         TableScrollSortView,

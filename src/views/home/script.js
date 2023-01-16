@@ -1,9 +1,9 @@
 import FooterNav from '@/components/foot-nav/'
-import Card from '@/components/card/'
+import ACard from '@/components/card/'
 
 export default {
   components: {
       FooterNav,
-      Card
+      ACard
   }, 
 }

@@ -2,7 +2,7 @@ import { columns, footers, rows, rowsTable }   from '../data-custom';
 import AButton                      from '@/components/button/';
 import ADropDown                    from '@/components/drop-down/';
 import ATable                       from '@/components/tables/table/';
-import Card                         from '@/components/card/';
+import ACard                        from '@/components/card/';
 import CardCode                     from '@/components/card-code/';
 import options                      from '../mixins/options';
 
@@ -13,7 +13,7 @@ export default {
         AButton,
         ADropDown,
         ATable,
-        Card,
+        ACard,
         CardCode
     },
     /**

@@ -1,0 +1,318 @@
+.row-from-left {
+  .table {
+    tbody {
+      tr {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: #edebeb;
+          width: 0px;
+          height: 12px;
+          animation: progres-left 6s infinite linear;
+          z-index: 999;
+          left: 3%;
+          top: 40%;
+          border-radius: 15px;
+          border: 1px solid #e5e5e5;
+          text-align: center;
+        }
+      }
+
+      td {
+        opacity: 0.08;
+      }
+    }
+  }
+}
+
+.row-from-center {
+  .table {
+    tbody {
+      tr {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: #edebeb;
+          width: 0px;
+          height: 12px;
+          animation: progres 6s infinite linear;
+          left: 50%;
+          top: 40%;
+          border-radius: 15px;
+          border: 1px solid #e5e5e5;
+          text-align: center;
+        }
+      }
+
+      td {
+        opacity: 0.08;
+      }
+    }
+  }
+}
+
+.row-from-top {
+  .table {
+    tbody {
+      tr {
+        animation: aniVertical 3s ease;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+        &:nth-child(2) {
+          animation-delay: 0.5s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    td {
+      opacity: 0.5;
+    }
+  }
+}
+
+.col-from-left {
+  .table {
+    tbody {
+      td {
+        position: relative;
+        color: #e3e3e3;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: #edebeb;
+          width: 0px;
+          height: 12px;
+          animation: progres-col 6s infinite linear;
+          z-index: 999;
+          left: 15%;
+          right: 15%;
+          top: 40%;
+          border-radius: 15px;
+          border: 1px solid #e5e5e5;
+        }
+      }
+
+      .selected-item {
+        border: 1px solid #e3e3e3;
+        color: #e3e3e3;
+
+        .select-icon {
+          stroke: #e3e3e3;
+        }
+      }
+    }
+  }
+}
+
+.row-left-shine {
+  .table {
+    tbody {
+      tr:nth-child(2) {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: rgba(255, 255, 255, .9);
+          // The shine that's going to move across the skeleton:
+          background-image:			
+              linear-gradient(
+                90deg, 
+                rgba(#8a8a8a, 0), 
+                rgba(#8a8a8a, 0.1),
+                rgba(#8a8a8a, 0)
+              );
+          background-size: 240px 97%; // width of the shine
+          background-repeat: no-repeat; // No need to repeat the shine effect
+          background-position: left -240px top 50%; // Place shine on the left side, with offset on the left based on the width of the shine - see background-size
+          animation: shine 3s ease infinite; // 
+          top: 0px;
+          left: 0;
+          right: 0;
+          bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.body-from-left {
+  .table {
+    tbody {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: #edebeb;
+        width: 0px;
+        height: 12px;
+        animation: progres-left 6s infinite linear;
+        z-index: 999;
+        left: 3%;
+        top: 47%;
+        border-radius: 15px;
+        border: 1px solid #e5e5e5;
+        text-align: center;
+      }
+
+      td {
+        opacity: 0.08;
+      }
+    }
+  }
+}
+
+.body-from-center {
+  .table {
+    tbody {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: #edebeb;
+        width: 0px;
+        height: 12px;
+        animation: progres 6s infinite linear;
+        left: 50%;
+        top: 47%;
+        border-radius: 15px;
+        border: 1px solid #e5e5e5;
+        text-align: center;
+      }
+
+      td {
+        opacity: 0.08;
+      }
+    }
+  }
+}
+
+@keyframes progres {
+  from {
+    left: 50%;
+    width: 0%;
+  }
+  to {
+    left: 1%;
+    width: 98%;
+  }
+}
+
+@keyframes progres-left {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 94%;
+  }
+}
+
+@keyframes aniVertical {
+  0% {
+    opacity: 0.1;
+    background-color: #e2e2e2;
+  }
+
+  50% {
+    opacity: 0.3;
+    background-color: #e2e2e2;
+  }
+
+  100% {
+    opacity: 0.1;
+    background-color: #e2e2e2;
+  }
+}
+
+@keyframes progres-col {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 15%;
+  }
+  50% {
+    width: 45%;
+  }
+  75% {
+    width: 60%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+
+@keyframes shine {
+  to {
+    background-position: right -240px top 50%;
+ }
+}
+
+
+// TODO - Ronnie - Move to checkbox scss ones component gets created.
+
+.form-check {
+  display: flex;
+  align-items: center;
+
+  &.form-check-inline {
+    display: inline-flex;
+  }
+
+  .form-check-label {
+    margin-left: 0.25rem;
+    font-size: var(--font-size-11);
+    white-space: nowrap;
+  }
+
+  .form-check-input {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
+
+.form-switch {
+  .form-check-input {
+    min-width: 2em;
+    margin-left: -2em;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// TODO - Ronnie - Move to pop-out scss ones component gets created.
+.dropdown-menu {
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  width: max-content;
+
+  .card {
+    box-shadow: 0 0.2rem 1rem rgba(210, 210, 210, 1);
+  }
+}

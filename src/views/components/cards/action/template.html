@@ -1,0 +1,64 @@
+<div class="card-action-view">
+  <div class="row mt-2">
+    <div class="col tiles dash-board">
+      <div class="grid">
+        <div class="cols ignore">  
+          <a-card action>
+            <template #header>
+              <a-badge primary>EUR</a-badge>
+              <a-badge dark>RFP</a-badge>
+              <span class="fw-bolder" id="blob">City Bank</span>
+              <span class="ms-auto"><a-button secondary size="xsmall" class="m-0">Submit</a-button></span>
+            </template>
+        
+              <h5 class="card-title pointer" @click="toggleCardText('one')">249,000,000.08</h5>
+              <div class="card-text toggle-info" :class="{ 'active-toggle': toggleText }">
+                <div class="data-row">
+                  <div>11 Sep 2021 11:01:02</div>          
+                </div>
+                <div class="data-row">
+                  <div>811,468,275.05 EUR</div>          
+                </div>
+                <div class="data-row">
+                  <div>8ab9389986b7-45e3-b873-f1f425ee-213a</div>           
+                </div>
+                <div class="data-row">
+                  <div>1.76</div>          
+                </div>
+                <div class="card-text sub-text">
+                  <div class="data-row fw-bold">Obligation</div>
+                  <div class="data-row">
+                    <div>11 Sep 2021 11:01:02</div>
+                  </div>
+                  <div class="data-row">
+                    <div>811,468,275.05 EUR</div>
+                    <div>RFP</div>
+                    <div>CDBC</div>
+                  </div>
+                  <div class="data-row">
+                    <div>8ab9389986b7-45e3-b873-f1f425ee-213a</div>           
+                  </div>
+                </div>
+              </div>
+          </a-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-card action>
+  <template #header>
+    Header Content
+  </template>
+  Body content
+</a-card>
+</textarea>
+  </CardCode>
+
+
+
+  
+</div>

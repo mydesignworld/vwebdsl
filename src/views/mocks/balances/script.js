@@ -1,6 +1,5 @@
 import BalancesAccountView        from './balances-account'
 import BalancesCdbcView           from './balances-cdbc'
-import BalancesColumnsView        from './balances-columns'
 import BalancesDigitalAssetsView  from './balances-digital-assets'
 import BalancesFnalityView        from './balances-fnality'
 import BalancesTableView          from './table'
@@ -13,7 +12,6 @@ export default {
   components  : {
       BalancesAccountView,
       BalancesCdbcView,
-      BalancesColumnsView,
       BalancesDigitalAssetsView,
       BalancesFnalityView,
       BalancesTableView,

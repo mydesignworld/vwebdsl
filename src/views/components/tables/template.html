@@ -11,19 +11,19 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Organized" icon="search" card="primary" animate>
+        <a-card title="Organized" icon="search" hover intro class="primary">
           <p class="card-text">Data should be sorted in a logical way that can be by date, alphabetically or numerically.</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Interactive" icon="clipboard-check" card="primary" animate>
+        <a-card title="Interactive" icon="clipboard-check" hover intro class="primary">
           <p class="card-text">The user should be able to interact wit the information, e.g. being able to sort it or to trigger and action.</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Intuitive" icon="speedometer2" card="primary" animate>
+        <a-card title="Intuitive" icon="speedometer2" hover intro class="primary">
           <p class="card-text">Data should be structured in a logical way to allow the user to easily understand the it.</p>
-        </Card>
+        </a-card>
       </div>
     </div>
 
@@ -39,7 +39,10 @@
           </Tab>
           <Tab title="Table Pagination Filter">
             <table-pagination-sort-view />
-          </Tab>          
+          </Tab>
+          <Tab title="Table Experimental">
+            <table-experimental-view />
+          </Tab>                     
         </Tabs>
       </div>
     </div>
@@ -47,8 +50,8 @@
 
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-hover mb-0">
               <thead>
                 <tr>
@@ -116,7 +119,7 @@
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
 

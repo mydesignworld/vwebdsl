@@ -160,3 +160,10 @@ export const rowsTable = [
     { 'date' : '19 Aug 2021', 'time' : '10:47:59', 'loan_id' : '9917043209', 'mat_date' : '30 Dec 2020', 'mat_time' : '01:22:14', 'state' : 'California', 'city' : 'Santa Monica', 'curr' : 'USD', 'amt' : 9699364.03, 'rate' : 3.55, 'interest' : 242.18, 'total' : '9699606.18' },
     { 'date' : '07 Jul 2021', 'time' : '11:53:37', 'loan_id' : '6593734047', 'mat_date' : '06 Jun 2021', 'mat_time' : '01:39:42', 'state' : 'Arizona', 'city' : 'Tucson', 'curr' : 'USD', 'amt' : 6959059.84, 'rate' : 2.98, 'interest' : 255.97, 'total' : '6959315.81' }
 ];
+
+export const experimentalTable = [
+    { 'date' : '11 Sep 2021', 'time' : '10:23:41', 'loan_id' : '1765632080', 'mat_date' : '19 Mar 2021', 'mat_time' : '00:39:26', 'state' : 'Virginia', 'city' : 'Reston', 'curr' : 'USD', 'amt' : 4284678.03, 'rate' : 1.76, 'interest' : 323.16, 'total' : '4285001.16' },
+    { 'date' : '19 Aug 2021', 'time' : '10:47:59', 'loan_id' : '9917043209', 'mat_date' : '30 Dec 2020', 'mat_time' : '01:22:14', 'state' : 'California', 'city' : 'Santa Monica', 'curr' : 'USD', 'amt' : 9699364.03, 'rate' : 3.55, 'interest' : 242.18, 'total' : '9699606.18' },
+    { 'date' : '11 Sep 2021', 'time' : '10:23:41', 'loan_id' : '1765632080', 'mat_date' : '19 Mar 2021', 'mat_time' : '00:39:26', 'state' : 'Virginia', 'city' : 'Reston', 'curr' : 'USD', 'amt' : 4284678.03, 'rate' : 1.76, 'interest' : 323.16, 'total' : '4285001.16' },    
+    { 'date' : '07 Jul 2021', 'time' : '11:53:37', 'loan_id' : '6593734047', 'mat_date' : '06 Jun 2021', 'mat_time' : '01:39:42', 'state' : 'Arizona', 'city' : 'Tucson', 'curr' : 'USD', 'amt' : 6959059.84, 'rate' : 2.98, 'interest' : 255.97, 'total' : '6959315.81' }
+];

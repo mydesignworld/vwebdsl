@@ -1,0 +1,4 @@
+<div class="checkbox-hold">
+    <a-checkbox-base :id="`${id}-${index}`" v-for="(option, index) in options" :checked="value.includes(option.id)" @update:checked="check(option.id, $event)"
+        :fieldId="`${id}-${option.id}-${index}`" :fieldValue="`${option.value}`" :label="option.name" :key="option" :disabled="_isOptionDisabled(option)" :class="_checkboxStyle"/>
+</div>

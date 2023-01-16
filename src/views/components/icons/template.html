@@ -9,27 +9,29 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Relevant" icon="check-square" card="primary" animate>
+        <a-card title="Relevant" icon="check-square" hover intro class="primary">
           <p class="card-text">An icon should have a clearly understood relationship to the content it supports</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Informative" icon="clipboard-check" card="primary" animate>
+        <a-card title="Informative" icon="clipboard-check" hover intro class="primary">
           <p class="card-text">An icon should be clear and obvious, that can explain it's meaning without using words
           </p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Familiar" icon="people" card="primary" animate>
+        <a-card title="Familiar" icon="people" hover intro class="primary">
           <p class="card-text">An icons should firstly follow known symbols that are familiar to the user</p>
-        </Card>
+        </a-card>
       </div>
     </div>
     <div class="row mt-6">
       <div class="col">
-        <Card title="Preview" class="icon-demo">
-          <a-icon icon="adhara-refresh" />
-        </Card>
+        <a-card title="Preview" class="icon-demo">
+          <div class="mt-5">
+            <a-icon icon="adhara-refresh" />
+          </div>
+        </a-card>
       </div>
     </div>
 
@@ -53,10 +55,10 @@
           </div>
         </Modal>
 
-        <Card title="Available Icons" class="icon-demo">
-          <Tabs id="iconsTab" @tabChanged="_tabChanged">
+        <a-card title="Available Icons" class="icon-demo">
+          <Tabs id="iconsTab" @tabChanged="_tabChanged" class="mt-4">
             <Tab title="Adhara Icons" class="fade-in">
-              <div class="input-wrapper wrap-label mt-4">
+              <div class="input-wrapper wrap-label mt-2 mb-6">
                 <input type="text" id="search-icons" placeholder=" " class="form-control input-label" autocomplete="off"
                   v-model="searchTerm">
                 <label for="search-icons">Search Icons</label>
@@ -76,7 +78,7 @@
               </div>
             </Tab>
             <Tab title="Bootstrap Icons" class="fade-in">
-              <div class="input-wrapper wrap-label mt-4">
+              <div class="input-wrapper wrap-label mt-2 mb-6">
                 <input type="text" id="search-bootstrap" placeholder=" " class="form-control input-label"
                   autocomplete="off" v-model="searchTerm">
                 <label for="search-icons">Search Icons</label>
@@ -96,15 +98,15 @@
               </div>
             </Tab>
           </Tabs>
-        </Card>
+        </a-card>
       </div>
     </div>
 
 
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr>
@@ -125,12 +127,12 @@
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
 
 
   </div>
 
-  <FooterNav prevNav="/components/animations" prevTitle="Animations" />
+  <FooterNav prevNav="/components/animations" prevTitle="Animations" nextNav="/components/cards" nextTitle="Cards"/>
 </div>

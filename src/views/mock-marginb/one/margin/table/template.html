@@ -8,7 +8,7 @@
         </div>
       </div>
     </Modal>    
-    <Card class="table-card fade-in">
+    <a-card animate>
       <a-table :headers="columnHeader" :rows="rowContent" hover :key="componentKey">
         <template v-slot:items="{ row }">
           <td class="d-none">
@@ -39,7 +39,7 @@
           <span>No data</span>
         </template>
       </a-table>
-    </Card>
+    </a-card>
   </div>
 </div>
 

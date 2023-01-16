@@ -1,4 +1,4 @@
-import Card             from '@/components/card/';
+import ACard            from '@/components/card/';
 import CardCode         from '@/components/card-code/';
 import FooterNav        from '@/components/foot-nav/';
 import InputWithLabels  from './with-labels/';
@@ -9,7 +9,7 @@ import Tabs             from '@/components/tabs/tabs/';
 
 export default {
     components : {
-        Card,
+        ACard,
         CardCode,
         FooterNav,
         InputWithLabels,

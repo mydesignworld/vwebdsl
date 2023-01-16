@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col">
       <div class="table-hold">    
-        <Card class="table-card fade-in">
-          <a-table :headers="columns" :rows="rowsTable" responsive hover>      
+        <a-card animate>
+          <a-table :headers="columns" :rows="rowsTable" hover>      
             <template v-slot:items="{ row }">
               <td class="text-nowrap">{{ row.date }}</td>  
               <td class="text-nowrap">{{ row.loan_id }}</td>              
@@ -19,7 +19,7 @@
               <span>No data</span>
             </template>
           </a-table>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>
@@ -27,8 +27,8 @@
   <div class="row mt-6">
     <div class="col">
       <div class="table-hold">    
-        <Card class="table-card fade-in">
-          <a-table :headers="columns" :rows="rows" :pagination="pagination" :sort="sort" responsive>
+        <a-card animate>
+          <a-table :headers="columns" :rows="rows" :pagination="pagination" :sort="sort">
             <template v-slot:table-actions>
               <a-button secondary size="small">secondary button</a-button>
               <a-button primary size="small">primary button</a-button>
@@ -49,7 +49,7 @@
               <span>No data</span>
             </template>
           </a-table>          
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>  

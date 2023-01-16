@@ -1,11 +1,11 @@
 import AInput   from '@/components/input/';
-import Card     from '@/components/card/';
+import ACard    from '@/components/card/';
 import CardCode from '@/components/card-code/';
 
 export default {
     components : {
         AInput,
-        Card,
+        ACard,
         CardCode
     },
 
