@@ -1,8 +1,8 @@
 import { columns, rows }          from '../data-custom';
 import AButton                    from '@/components/button/';
+import ACard                      from '@/components/card/';
 import ADropDown                  from '@/components/drop-down/';
 import ATable                     from '@/components/tables/table/';
-import Card                       from '@/components/card/';
 import options                    from '../mixins/options';
 
 export default {
@@ -10,9 +10,9 @@ export default {
     mixins      : [ options ],
     components  : {
         AButton,
+        ACard,
         ADropDown,
-        ATable,
-        Card
+        ATable
     },
     /**
      * @override

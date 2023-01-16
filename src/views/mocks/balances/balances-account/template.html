@@ -3,12 +3,12 @@
     <div class="col-12">
       <div class="grid">
         <div class="cols">
-          <div class="card info-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
+          <a-card balance>
+            <template #header>
               <span class="badge rounded-pill bg-primary">USD</span>
-              <span class="fw-bolder">Beneficiary</span>
-            </div>     
-            <div class="card-body d-flex flex-column">
+              <span class="fw-bolder ms-auto">Beneficiary</span>
+            </template>     
+
               <h5 class="card-title">50,000,000.00</h5>
               <div class="card-text">
                 <div class="data-row">
@@ -43,17 +43,17 @@
               <div class="body-footer">
                 <a-drop-down :options="options" defaultValue="Select Action" size="small" class="w-100" />
               </div>
-            </div>
-          </div>
+   
+          </a-card>
         </div>
         
         <div class="cols">
-          <div class="card info-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
+          <a-card balance>
+            <template #header>
               <span class="badge rounded-pill bg-primary">USD</span>
-              <span class="fw-bolder">Beneficiary</span>
-            </div>     
-            <div class="card-body d-flex flex-column">
+              <span class="fw-bolder ms-auto">Beneficiary</span>
+            </template>     
+
               <h5 class="card-title">88,000,000.00</h5>
               <div class="card-text">
                 <div class="data-row">
@@ -88,8 +88,8 @@
               <div class="body-footer">
                 <a-drop-down :options="options" defaultValue="Select Action" size="small" class="w-100" />
               </div>
-            </div>
-          </div>
+     
+          </a-card>
         </div>        
 
       </div>                   

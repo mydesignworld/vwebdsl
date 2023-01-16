@@ -1,5 +1,5 @@
 import AButton       from '@/components/button/';
-import Card          from '@/components/card/';
+import ACard         from '@/components/card/';
 import CardCode      from '@/components/card-code/';
 import DropDown      from './drop-down';
 import DropDownSmall from './drop-down-small';
@@ -12,7 +12,7 @@ export default {
     components : {
         AButton,
         FooterNav,
-        Card,
+        ACard,
         CardCode,
         DropDown,
         DropDownSmall,

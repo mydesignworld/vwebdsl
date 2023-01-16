@@ -1,7 +1,7 @@
 <div class="table-scroll-view">
   <div class="table-hold tiles">
     <div class="table-intro d-none" @click="forceHistoryRender" id="historyUpdate">Last Updated  10:23:07</div>      
-    <Card class="table-card fade-in">
+    <a-card animate>
         <a-table :headers="columnHeaderClearingHistory" :rows="inProgress" hover :key="componentKeys">
         <template v-slot:items="{ row }">
           <td class="text-nowrap">{{ row.date }}</td>
@@ -23,6 +23,6 @@
           <span>No data</span>
         </template>
       </a-table>
-    </Card>
+    </a-card>
   </div>
 </div>

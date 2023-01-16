@@ -10,46 +10,46 @@
   <div class="container-xxl pt-5">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
       <div class="col">
-        <Card title="Discoverable" icon="search" card="primary" animate>
+        <a-card title="Discoverable" icon="search" hover intro class="primary">
           <p class="card-text">Input fields should create contrast between themselves and surrounding content</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Clear" icon="clipboard-check" card="primary" animate>
+        <a-card title="Clear" icon="clipboard-check" hover intro class="primary">
           <p class="card-text">Input field states should be clearly differentiated from one another</p>
-        </Card>
+        </a-card>
       </div>
       <div class="col">
-        <Card title="Efficient" icon="speedometer2" card="primary" animate>
+        <a-card title="Efficient" icon="speedometer2" hover intro class="primary">
           <p class="card-text">Input fields should make it easy for users to understand the information required to
             populate</p>
-        </Card>
+        </a-card>
       </div>
     </div>
 
 
-   <div class="row mt-6">
+    <div class="row mt-6">
       <div class="col">
-        <Tabs sticky id="inputTabs">  
+        <Tabs sticky id="inputTabs">
           <Tab title="Standard">
             <input-with-titles />
-          </Tab>           
+          </Tab>
           <Tab title="Labels">
             <input-with-labels />
-          </Tab>                           
+          </Tab>
           <Tab title="Lines">
             <input-with-lines />
-          </Tab>               
+          </Tab>
         </Tabs>
       </div>
-    </div>  
-    
-    
+    </div>
+
+
 
     <div class="row mt-6">
       <div class="col">
-        <Card title="Options">
-          <div class="table-responsive">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr>
@@ -63,7 +63,8 @@
                 <tr>
                   <td><code>labels</code></td>
                   <td>Boolean</td>
-                  <td class="text-nowrap">If neither labels, lines or titles are specified lables will be the default. Will set input to label L&F state</td>
+                  <td class="text-nowrap">If neither labels, lines or titles are specified lables will be the default.
+                    Will set input to label L&F state</td>
                   <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
                 </tr>
                 <tr>
@@ -71,7 +72,7 @@
                   <td>Boolean</td>
                   <td>Will set input to line L&F state</td>
                   <td><span class="text-primary">false</span>, true</td>
-                </tr>                               
+                </tr>
                 <tr>
                   <td><code>type</code></td>
                   <td>String</td>
@@ -88,31 +89,34 @@
                 <tr>
                   <td><code>id</code></td>
                   <td>String</td>
-                  <td>Will add an identifier for the input, and bind it to the label. If no id is evident the lable will be used as an id. E.g. <code>id="username"</code>
+                  <td>Will add an identifier for the input, and bind it to the label. If no id is evident the lable will
+                    be used as an id. E.g. <code>id="username"</code>
                   </td>
                   <td><span class="text-primary">icon=""</span></td>
-                </tr>                              
+                </tr>
                 <tr>
                   <td><code>errorMessage</code></td>
                   <td>String</td>
-                  <td>Will add message that should display as error on validation fail. E.g. <code>errorMessage="Not a valid username"</code>
+                  <td>Will add message that should display as error on validation fail. E.g.
+                    <code>errorMessage="Not a valid username"</code>
                   </td>
                   <td><span class="text-primary">icon=""</span></td>
                 </tr>
                 <tr>
                   <td><code>placeholder</code></td>
                   <td>String</td>
-                  <td>To add a placeholder description to the input, but also to assit with animating labels. E.g. <code>placeholder="Please enter username"</code>
+                  <td>To add a placeholder description to the input, but also to assit with animating labels. E.g.
+                    <code>placeholder="Please enter username"</code>
                   </td>
                   <td><span class="text-primary">icon=""</span></td>
-                </tr>                
+                </tr>
                 <tr>
                   <td><code>value</code></td>
                   <td>String</td>
                   <td>The value of the input to submit. can either be String or Number.
                   </td>
                   <td><span class="text-primary">icon=""</span></td>
-                </tr>                 
+                </tr>
                 <tr>
                   <td><code>disabled</code></td>
                   <td>Boolean</td>
@@ -124,15 +128,15 @@
                   <td>Boolean</td>
                   <td>Will make input mandatory before submit can happen</td>
                   <td><span class="text-primary">false</span>, true</td>
-                </tr>                
+                </tr>
               </tbody>
             </table>
           </div>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>
 
-  <FooterNav prevNav="/components/buttons" prevTitle="Buttons" nextNav="/components/drop-downs"
-    nextTitle="Drop Downs" />
+  <FooterNav prevNav="/components/buttons" prevTitle="Buttons" nextNav="/components/checkboxes"
+    nextTitle="Switches & Checkboxes" />
 </div>

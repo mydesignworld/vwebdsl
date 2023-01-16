@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col">
       <div class="table-hold">
-        <Card class="table-card fade-in">       
+        <a-card animate>       
           <a-table :headers="columnsmin" :rows="items" :pagination="pagination" responsive>
             <template v-slot:items="{ row }">
               <td class="text-nowrap">{{ row.date }}</td>
@@ -20,7 +20,7 @@
               <span>No data</span>
             </template>
           </a-table>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>

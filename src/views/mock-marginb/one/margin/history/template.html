@@ -1,7 +1,7 @@
 <div class="table-scroll-view">
   <div class="table-hold tiles">
     <div class="table-intro d-none" @click="forceHistoryRender" id="historyUpdate">Last Updated  10:23:07</div>      
-    <Card class="table-card fade-in">
+    <a-card animate>
       <Modal ref="modal" id="confirm-modal" :title="modalHeader" trigger="text" autoClose hideActions>
         <div class="input-wrapper">
           <div class="text-center text-success">
@@ -10,7 +10,7 @@
           </div>
         </div>
       </Modal>      
-        <a-table :headers="columnHeaderProgress" :rows="inProgress" hover :key="componentKeys">
+        <a-table :headers="columnHeaderProgress" :rows="inProgress" hover responsive :key="componentKeys">
         <template v-slot:items="{ row }">         
           <td class="text-nowrap">{{ row.date }}</td>
           <td class="text-nowrap">{{ row.time }}</td>
@@ -33,6 +33,6 @@
           <span>No data</span>
         </template>
       </a-table>
-    </Card>
+    </a-card>
   </div>
 </div>

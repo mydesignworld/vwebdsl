@@ -1,6 +1,6 @@
 import ABadge           from '@/components/badge/';
 import AButton          from '@/components/button/';
-import ADashboardCard   from '@/components/card-dashboard/';
+import ACard            from '@/components/card/';
 import ADropDown        from '@/components/drop-down/';
 import AIcon            from '@/components/icon/';
 import AInput           from '@/components/input/';
@@ -14,7 +14,7 @@ export default {
     components      : {
         ABadge,
         AButton,
-        ADashboardCard,
+        ACard,
         ADropDown,
         AIcon,
         AInput,

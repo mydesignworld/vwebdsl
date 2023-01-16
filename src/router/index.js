@@ -39,6 +39,24 @@ const routes = [
     }     
   },
   {
+    path: '/components/cards',
+    name: 'Cards',   
+    component: () => import('../views/components/cards/'),
+    meta: {
+      title: 'Cards',
+      navdsl: true
+    }     
+  },  
+  {
+    path: '/components/checkboxes',
+    name: 'Checkboxes',   
+    component: () => import('../views/components/checkboxes/'),
+    meta: {
+      title: 'Switches & Checkboxes',
+      navdsl: true
+    }     
+  },  
+  {
     path: '/components/drop-downs',
     name: 'Drop Downs',   
     component: () => import('../views/components/drop-downs/'),
@@ -92,6 +110,15 @@ const routes = [
       navdsl: true
     }     
   },
+  {
+    path: '/components/tooltips',
+    name: 'Tooltips',   
+    component: () => import('../views/components/tooltips/'),
+    meta: {
+      title: 'Tooltips',
+      navdsl: true
+    }     
+  },  
   {
     path: '/mocks/home',
     name: 'Mock Home',   
@@ -153,26 +180,6 @@ const routes = [
     }     
   },   
   {
-    path: '/marginbloc/balances',
-    name: 'MB Balances',   
-    component: () => import('../views/mock-marginb/one/balances/'),
-    meta: {
-      title: 'Bank One Balances',
-      marginbloc: true,
-      themeName: 'dc-com'
-    }     
-  },
-  {
-    path: '/marginbloc/bank/balances',
-    name: 'MB Bank Balances',   
-    component: () => import('../views/mock-marginb/two/balances/'),
-    meta: {
-      title: 'Bank Two Balances',
-      marginbloc: true,
-      themeName: 'dc-com'
-    }     
-  },  
-  {
     path: '/marginbloc/margin',
     name: 'MB Margin',   
     component: () => import('../views/mock-marginb/one/margin'),
@@ -191,27 +198,7 @@ const routes = [
       marginbloc: true,
       themeName: 'dc-com'
     }     
-  },    
-  {
-    path: '/marginbloc/dashboards/dashboard',
-    name: 'MB Dashboard',   
-    component: () => import('../views/mock-marginb/one/dashboards/dashboard'),
-    meta: {
-      title: 'Dashboard',
-      marginbloc: true,
-      themeName: 'dc-com'
-    }     
-  },
-  {
-    path: '/marginbloc/dashboards/dashboard-bank',
-    name: 'MB Dashboard Too',   
-    component: () => import('../views/mock-marginb/one/dashboards/dashboard-bank'),
-    meta: {
-      title: 'Dashboard Bank',
-      marginbloc: true,
-      themeName: 'dc-com'
-    }     
-  },        
+  },            
 ]
 
 

@@ -1,6 +1,6 @@
 import ADropDown        from '@/components/drop-down/';
 import AIcon            from '@/components/icon/';
-import Card             from '@/components/card/'
+import ACard            from '@/components/card/'
 import CardCode         from '@/components/card-code/'
 import options          from '../mixins/options';
 
@@ -10,7 +10,7 @@ export default {
     components  : {
         ADropDown,
         AIcon,
-        Card,
+        ACard,
         CardCode
     }
 };

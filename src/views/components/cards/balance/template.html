@@ -1,0 +1,64 @@
+<div class="card-default-view">
+
+  <div class="row mt-2">
+    <div class="col tiles balances">
+      <div class="grid">
+        <div class="cols">
+          <a-card balance>
+            <template #header>
+              <span class="badge rounded-pill bg-primary">GBP</span>
+              <span class="fw-bolder ms-auto">Fnality</span>
+            </template>
+            <h5 class="card-title">249,000,000,000.00</h5>
+            <div class="card-text">
+              <div class="data-row">
+                <div>On Hold settlement</div>
+                <div>49,000,000.00</div>
+              </div>
+              <div class="data-row">
+                <div>On Hold Credit</div>
+                <div>100,000,000,000.00</div>
+              </div>
+              <div class="data-row">
+                <div>Available Credit</div>
+                <div>100,000,000.00</div>
+              </div>
+              <div class="data-row">
+                <div>Account</div>
+                <div>ZAE000269221</div>
+              </div>
+            </div>
+            <div class="body-footer">
+              <a-drop-down :options="options" defaultValue="Select Action" size="small" class="w-100" />
+            </div>
+          </a-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-card balance>
+  <template #header>
+    Header Content
+  </template>
+    Body Content
+</a-card>
+
+<div class="card balance-card default">
+  <div class="card-header d-flex align-items-center"> Header Content </div>
+  <div class="card-body card-body d-flex flex-column">
+    Body Content
+  </div>
+</div>
+</textarea>
+  </CardCode>
+
+
+
+
+</div>
+
+

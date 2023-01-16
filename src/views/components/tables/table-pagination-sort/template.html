@@ -3,7 +3,7 @@
     <div class="col">
       <div class="table-hold">
         <div class="table-intro">Last Updated 10:23:07</div>
-        <Card class="table-card fade-in">
+        <a-card animate>
           <a-table :headers="columnsmin" :rows="rows" :sort="sort" :pagination="pagination" responsive>
             <template v-slot:table-actions>
               <a-button secondary size="small">secondary button</a-button>
@@ -23,7 +23,7 @@
               <span>No data</span>
             </template>
           </a-table>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>

@@ -1,0 +1,154 @@
+<div class="table-experimental-view">
+  <div class="row">
+    <div class="col">
+      <div class="table-hold">
+        <a-card animate>
+
+          <a-table :headers="columns" :rows="experimentalTable" :class="loaderName">
+            <template v-slot:table-actions>
+              <span class="hold-pop-over">
+                <div class="dropdown dropend">
+                <a-button primary size='small' class="dropdown-toggle" data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside" aria-expanded="false" data-bs-offset="-40,8">Table
+                  Settings</a-button>
+                <div class="dropdown-menu">
+                  <a-card title="Settings">
+                    <div class="row mt-4">
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="row-from-left" v-model="loaderName"
+                            value="row-from-left" @click="deSelect">
+                          <label class="form-check-label" for="row-from-left">Row Left</label>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="row-from-center" v-model="loaderName"
+                            value="row-from-center" @click="deSelect">
+                          <label class="form-check-label" for="row-from-center">Row Center</label>
+                        </div>
+                      </div>                      
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="row-from-top" v-model="loaderName"
+                            value="row-from-top" @click="deSelect">
+                          <label class="form-check-label" for="row-from-top">Row Fade</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt-1">
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="row-left-shine" v-model="loaderName"
+                            value="row-left-shine" @click="deSelect">
+                          <label class="form-check-label" for="row-left-shine">Row Shine</label>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="body-from-left" v-model="loaderName"
+                            value="body-from-left" @click="deSelect">
+                          <label class="form-check-label" for="body-from-left">Body Left</label>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="body-from-center" v-model="loaderName"
+                            value="body-from-center" @click="deSelect">
+                          <label class="form-check-label" for="body-from-center">Body Center</label>
+                        </div>
+                      </div>                                            
+                    </div>
+                    
+                    <div class="row mt-1">
+                      <div class="col-4">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="col-from-left" v-model="loaderName"
+                            value="col-from-left" @click="deSelect">
+                          <label class="form-check-label" for="col-from-left">Col Left</label>
+                        </div>
+                      </div>                                          
+                    </div>                      
+                  </a-card>
+
+                </div>
+                </div>
+              </span>
+            </template>
+            <template v-slot:items="{ row }">
+              <td class="text-nowrap">{{ row.date }}</td>
+              <td class="text-nowrap">{{ row.loan_id }}</td>
+              <td class="text-nowrap">{{ row.city }}</td>
+              <td class="text-nowrap">{{ row.curr }}</td>
+              <td class="text-nowrap text-end">{{ row.amt }}</td>
+              <td class="text-nowrap text-end">{{ row.rate }}</td>
+              <td class="text-nowrap text-end">{{ row.interest }}</td>
+              <td class="text-nowrap text-end">{{ row.total }}</td>
+              <td>
+                <a-drop-down :options="options" defaultValue="Select Action" size="small" />
+              </td>
+            </template>
+            <template v-slot:no-data>
+              <span>No data</span>
+            </template>
+          </a-table>
+        </a-card>
+      </div>
+    </div>
+  </div>
+
+
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<a-table :headers="columns" :rows="items" :footers="footers" responsive scrollable hover>
+  <template v-slot:items="{ row }">
+    <td class="text-nowrap">{row.date}</td>  
+    <td class="text-nowrap">{row.amount}</td>                  
+  </template>
+  <template v-slot:no-data>
+    <span>No data</span>
+  </template>
+</a-table>
+
+<div class="table-responsive table-scroll">
+  <table class="table align-middle table-hover">
+    <thead>
+      <tr>
+        <th class="col-sortable text-nowrap"><span>Date</span>
+          <!--v-if-->
+        </th>
+        <th class="col-sortable text-nowrap"><span>Amount</span>
+          <!--v-if-->
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-nowrap">11 Sep 2021</td>
+        <td class="text-nowrap">1765632080</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap">19 Aug 2021</td>
+        <td class="text-nowrap">9917043209</td>
+      </tr>
+    </tbody>
+    <tfoot class="footer-one">
+      <tr>
+        <th class=""><span>Total</span></th>
+        <th class="text-end"><span>9145222.87</span></th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+</textarea>
+  </CardCode>
+
+
+
+
+
+
+
+</div>

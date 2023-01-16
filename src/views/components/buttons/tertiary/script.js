@@ -1,11 +1,11 @@
 import AButton      from '@/components/button/';
-import Card     from '@/components/card/';
-import CardCode from '@/components/card-code/';
+import ACard        from '@/components/card/';
+import CardCode     from '@/components/card-code/';
 
 export default {
     components : {
         AButton,
-        Card,
+        ACard,
         CardCode
     }
 };

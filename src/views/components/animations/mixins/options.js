@@ -34,7 +34,12 @@ export default {
                 id       : 'slideUp',
                 value    : 'slide-up',
                 label    : 'Slide Up'
-            }
+            },
+            {
+                id       : 'rotateRight',
+                value    : 'rotate-right',
+                label    : 'Rotate Right'
+            }            
         ]
     })
 };

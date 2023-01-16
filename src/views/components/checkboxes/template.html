@@ -1,0 +1,97 @@
+<div class="tooltips-view">
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">
+      Switches & Checkboxes allow users to select one or more items from a set. It can also be used to turn an option on or off.
+    </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <a-card title="Familiar" icon="toggles" hover intro class="primary">
+          <p class="card-text">
+            Switches & Checkboxes have been in user interfaces for a long time and should be used as expected.
+          </p>
+        </a-card>
+      </div>
+      <div class="col">
+        <a-card title="Scannable" icon="ui-checks" hover intro class="primary">
+          <p class="card-text">
+            It should be easily visible if a switch or checkbox has been selected, and selected items should be more visually prominent than unselected items.
+          </p>
+        </a-card>
+      </div>
+      <div class="col">
+        <a-card title="Efficient" icon="stopwatch" hover intro class="primary">
+          <p class="card-text">
+            Switches & Checkboxes should make it easy to compare and obvious as to what the available options are.
+          </p>
+        </a-card>
+      </div>
+    </div>
+
+    <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky id="checkBoxTabs">
+          <Tab title="Switch" class="fade-in">
+            <check-switch />
+          </Tab>
+          <Tab title="Button Check" class="fade-in">
+            <check-button />
+          </Tab>
+          <Tab title="Checkbox" class="fade-in">
+            <check-box />
+          </Tab>
+        </Tabs>
+      </div>
+    </div>
+
+    <div class="row mt-6">
+      <div class="col">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>switch</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set the checkboxes to a switch L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>button</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set checkbox to a selectable button L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr> 
+                <tr>
+                  <td><code>inline</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set the checkboxes to a inline (horizontal) L&F state</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>                                 
+                <tr>
+                  <td><code>single</code></td>
+                  <td>Boolean</td>
+                  <td>Set the checkbox to a select one option state, where selecting one option will deselect other options. Similar to radion button functionality</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>                                  
+              </tbody>
+            </table>
+          </div>
+        </a-card>
+      </div>
+    </div>
+  </div>
+
+  <FooterNav prevNav="/components/inputs" prevTitle="Inputs" nextNav="/components/drop-downs" nextTitle="Drop Downs" />
+</div>

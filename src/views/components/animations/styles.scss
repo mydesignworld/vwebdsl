@@ -1,9 +1,34 @@
-.animations-view .select-box {
-    min-width: 140px;
-}
+.animations-view {
+    .select-box {
+        min-width: 140px;
+    }
 
-.card.info-card.animate-content  {
-    min-width: 530px;
-    min-height: 220px;
-    box-shadow: none;
+    .card {
+        &.intro-card {
+            &.animate-content  {
+                min-width: 530px;
+                min-height: 220px;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .hold-icon {
+        display: none;
+    }
+
+    .rotate-right {
+        justify-content: center;
+        width: 32px;
+        margin-top: 12px;
+        font-size: 1.5rem;
+
+        .card {
+            display: none;
+        }
+
+        .hold-icon {
+            display: inline-flex;
+        }
+    }
 }

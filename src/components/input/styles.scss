@@ -1,17 +1,32 @@
 .input-wrapper {
     position: relative;
-    margin: 0 10px 24px 0;
-}
+    margin: 24px 0 0;
 
-.input-wrapper.wrap-title {
-    margin-bottom: 34px;
+    &:first-child {
+        margin-top: 0;
+    }
+    
+    &:last-child {
+        margin-bottom: 24px;
+    }
+
+    &.wrap-title {
+        margin-bottom: 38px;
+
+        &:first-child {
+            margin-top: 18px;
+        }
+
+        &:last-child {
+            margin-bottom: 24px;
+        }
+    }
 }
 
 .form-control {
-    height: 41px;
-    margin: .2rem .4rem .2rem 0;
-    padding: 10px 24px;
-    padding-top: 11px;
+    height: 40px;
+    margin: 0 .4rem 0 0;
+    padding: 11px 24px 10px;
     border: 1px solid var(--form-label-color);
     border-radius: 20px;
     outline: none;
@@ -19,96 +34,117 @@
     font-size: var(--font-size-8);
     text-transform: uppercase;
     background-color: var(--input-bg);
-}
 
-/* Hide Stepper on input number - Firefox */
-.form-control[type=number] {
-    appearance: textfield;
-}
-  
-/* Hide Stepper on input number - Chrome, Safari, Edge, Opera */
-.form-control::-webkit-outer-spin-button,
-.form-control::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
-}
+    ~ label {
+        position: absolute;
+        top: -17px;
+        z-index: 2;
+        color: var(--body-color);
+        font-size: var(--font-size-10);
+        font-weight: var(--font-weight-bolder);
+        line-height: var(--spacer-10);
+        pointer-events: none;
+        background: var(--input-bg);
 
-.form-control:disabled,
-.form-control[readonly] {
-    background-color: var(--input-bg);
-}
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
 
-.form-control ~ label {
-    position: absolute;
-    top: -18px;
-    z-index: 2;
-    color: var(--body-color);
-    font-size: var(--font-size-10);
-    font-weight: var(--font-weight-bolder);
-    pointer-events: none;
-    background: var(--input-bg);
-}
+    ~ .invalid-feedback {
+        position: absolute;
+        bottom: -13px;
+        font-size: var(--font-size-8);
+        font-weight: var(--font-weight-bolder);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-.form-control.input-label ~ label {
-    top: 14px;
-    left: 20px;
-    padding: 0 4px;
-    color: var(--form-label-color);
-    font-size: var(--font-size-9);
-    text-transform: uppercase;
-    transition: .2s ease all;
-}
+    /* Hide Stepper on input number - Firefox */
+    &[type=number] {
+        appearance: textfield;
+    }
 
-.form-control.input-line ~ label {
-    display: none;
-}
-
-.form-control:disabled ~ label,
-.form-control[readonly] ~ label {
-    color: var(--form-label-color);
-}
-
-.form-control.input-line {
-    height: auto;
-    padding: 0;
-    padding-bottom: 4px;
-    border: 0;
-    border-bottom: 1px solid var(--form-label-color);
-    border-radius: 0;
-    font-size: var(--font-size-24);
-    font-weight: 700;
-    line-height: 30px;
-    text-align: left;
-}
-
-.form-control ~ label::first-letter {
-    text-transform: capitalize;
-}
-
-.form-control::placeholder {
-    color: var(--form-label-color);
-    font-size: var(--font-size-9);
-    text-align: left;
-}
-
-.form-control.input-label::placeholder {
-    opacity: 0;
-}
-
-.form-control.input-line::placeholder {
-    position: absolute;
-    bottom: 16px;
-}
-
-.form-control:focus,
-.form-control:not(:placeholder-shown) {
-    border-color: var(--input-border-focus);
-    color: var(--body-color);
-    background-color: var(--input-bg);
-    box-shadow: none;
-    &:disabled {
-        border-color: var(--form-label-color);
+    &::placeholder {
         color: var(--form-label-color);
+        font-size: var(--font-size-9);
+        text-align: left;
+    }
+
+    /* Hide Stepper on input number - Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: var(--input-bg);
+
+        ~ label {
+            color: var(--form-label-color);
+        }
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+        border-color: var(--input-border-focus);
+        color: var(--body-color);
+        background-color: var(--input-bg);
+        box-shadow: none;
+    
+        &:disabled {
+            border-color: var(--form-label-color);
+            color: var(--form-label-color);
+        }
+    }
+
+    &.input-line {
+        height: auto;
+        padding: 0;
+        padding-bottom: 4px;
+        border: 0;
+        border-bottom: 1px solid var(--form-label-color);
+        border-radius: 0;
+        font-size: var(--font-size-24);
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+
+        ~ label {
+            display: none;
+        }
+
+        &::placeholder {
+            position: absolute;
+            bottom: 16px;
+        }
+    }
+
+    &.input-label {
+        ~ label {
+            top: 14px;
+            left: 20px;
+            padding: 0 4px;
+            color: var(--form-label-color);
+            font-size: var(--font-size-9);
+            line-height: 14px;
+            text-transform: uppercase;
+            transition: .2s ease all;
+        }
+
+        &::placeholder {
+            opacity: 0;
+        }
+
+        &:focus ~ label,
+        &:invalid ~ label,
+        &:not(:placeholder-shown) ~ label {
+            color: var(--input-border-focus);
+            transform: translateY(-21px);
+        }
     }
 }
 
@@ -116,7 +152,9 @@
 .form-control.is-invalid {
     padding-right: calc(1.5em + .75rem);
     border-color: var(--color-danger);
-    background-image: url('~@/assets/images/icons/error.svg');
+    // @todo: SVG icons should be loaded using <a-icon/> component
+    // background-image: url('../../../assets/icons/error.svg');
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 17 15' version='1.1' xmlns='http://www.w3.org/2000/svg'><g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g transform='translate(-452.000000, -520.000000)'><g transform='translate(452.319847, 520.549534)'><circle fill='%23D0021B' cx='8' cy='10.5' r='1'></circle><path d='M8.87415728,0.514539247 L15.1746428,11.8554132 C15.442856,12.338197 15.2689122,12.9470002 14.7861285,13.2152134 C14.6375705,13.2977456 14.4704298,13.3410561 14.3004855,13.3410561 L1.69951446,13.3410561 C1.14722971,13.3410561 0.69951446,12.8933409 0.69951446,12.3410561 C0.69951446,12.1711119 0.742824961,12.0039712 0.825357184,11.8554132 L7.12584272,0.514539247 C7.39405591,0.0317555141 8.0028592,-0.142188283 8.48564293,0.126024902 C8.648883,0.216713827 8.78346835,0.351299181 8.87415728,0.514539247 Z' stroke='%23D0021B' stroke-linecap='round' stroke-linejoin='round'></path><line x1='8' y1='4.34105615' x2='8' y2='8.44105615' stroke='%23D0021B' stroke-linecap='round' stroke-linejoin='round'></line></g></g></g></svg>");
     background-position: right calc(.38em + .78rem) center;
     background-size: var(--font-size-16);
 }
@@ -124,7 +162,7 @@
 .was-validated .form-control:valid,
 .form-control.is-valid,
 .was-validated .form-control:valid:focus,
-.form-control.is-valid:focus 
+.form-control.is-valid:focus
  {
     border-color: var(--input-border-focus);
     background-image: none;
@@ -138,13 +176,6 @@
 
 .was-validated .form-control:valid ~ label {
     color: var(--body-color);
-}
-
-.form-control.input-label:focus ~ label,
-.form-control.input-label:invalid ~ label,
-.form-control.input-label:not(:placeholder-shown) ~ label {
-    color: var(--input-border-focus);
-    transform: translateY(-21px);
 }
 
 .was-validated .form-control.input-label ~ label,
@@ -162,32 +193,22 @@
     color: var(--input-border-focus);
 }
 
-.form-control ~ .invalid-feedback {
-    position: absolute;
-    top: -33px;
-    font-size: var(--font-size-8);
-    font-weight: var(--font-weight-bolder);
-}
-
-.form-control.input-line ~ .invalid-feedback {
-    top: -14px;
-}
-
-.form-control.input-label ~ .invalid-feedback {
-    top: -24px;
-}
-
 @media (min-width: 576px) {
     .form-control {
         width: 177px;
+
+        &.input-line {
+            width: 248px;
+        }
     }
 
-    .form-control.input-line {
-        width: 248px;
-    }
-
-    .modal-body .form-control,
-    .modal-body .form-control.input-line {
-        width: 100%;
+    .modal-body {
+        .form-control {
+            width: 100%;
+            
+            &.input-line {
+                width: 100%;
+            }
+        }
     }
 }

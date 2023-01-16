@@ -10,7 +10,7 @@
     text-align: left;
     text-transform: uppercase;
 }
-  
+
 .selected-item {
     display: flex;
     justify-content: left;
@@ -76,7 +76,10 @@
     border-radius: 1rem;
     color: var(--color-primary);
     background-color: var(--input-bg);
-    overflow: hidden;
+
+    &.hideme {
+        overflow: hidden;
+    }
 }
 
 .select-box .item {

@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12">
       <div class="grid">
-        <div class="cols">
+        <div class="cols position-relative">
           <div class="d-flex mb-4">
             <div>
               <div class="display-8 fw-bolder">Task List</div>
@@ -13,8 +13,12 @@
               <a-badge primary size="small" class="me-3"></a-badge>
             </div>
           </div>
-          <transition-group name="list">
-            <a-dashboard-card v-for="(toDo,index) in toDoBank" :key="toDo.id">
+          <transition-group name="listings">
+            <a-card v-for="(toDo,index) in toDoBank" :key="toDo.id" action>
+              <template #confirmation>
+                <div class="fw-bold">Task Completed</div>
+                <div class="confirm-result-icon"><a-icon icon="adhara-success" class="text-success icon-md" /></div>
+              </template>              
               <template #header>
                 <a-badge primary @click="addToInProgressBank(toDo, index)">{{ toDo.curr }}</a-badge>
                 <a-badge dark>{{ toDo.obligation }}</a-badge>                
@@ -22,9 +26,8 @@
                 <span class="ms-auto" v-if="!toDo.actionSelect"><a-button secondary size="xsmall" class="m-0"  @click="addToInProgressBank(toDo, index)">Submit</a-button></span>
                 <div class="xs-select ms-auto" v-if="toDo.actionSelect"><div><a-drop-down :options="options" defaultValue="Action" size="xsmall" @change="displayModal('trigger-' + toDo.id.toLocaleString())"/></div></div>                
               </template>
-              <template #body>
-                <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
-                <div class="card-text toggle-me" :class="{ 'active-toggle': toDo.toggleText }"> 
+                <h5 v-if="toDo.actionSelect" class="card-title pointer" @click="toggleCardText(toDo, index)" >{{ toDo.total.toLocaleString() }}</h5>
+                <div class="card-text toggle-info" :class="{ 'active-toggle': toDo.toggleText }"> 
                   <div class="data-row">
                     <div>{{ toDo.date }} {{ toDo.time }}</div>          
                   </div>
@@ -51,9 +54,7 @@
                       <div>{{ toDo.account }}</div>           
                     </div>
                   </div>
-                </div>
-                <a-icon v-if="!toDo.toggleText && toDo.actionSelect" icon="chevron-down" class="text-primary action-icon" @click="toggleCardText(toDo, index)" />
-                <a-icon v-if="toDo.toggleText" icon="chevron-up" class="text-primary action-icon" @click="toggleCardText(toDo, index)" />                  
+                </div>                  
                 <Modal ref="modal" :id="toDo.id.toLocaleString()" title="Set Rate" trigger="text" closeIcon @saveModal="addToInProgressBank(toDo, index)">
                   <label>Amount</label>
                   <a-badge primary>{{ toDo.curr }}</a-badge>
@@ -61,8 +62,8 @@
                   <a-input label="Rate" id="idAccount" :value="toDo.rate.toLocaleString()" placeholder="Enter Rate" />
                 </Modal>
                     
-              </template>
-            </a-dashboard-card>
+
+            </a-card>
           </transition-group>
 
 
@@ -72,7 +73,7 @@
         </div>
 
 
-        <div class="cols">
+        <div class="cols position-relative">
           <div class="d-flex mb-4">
             <div>
               <div class="display-8 fw-bolder">In Progress</div>
@@ -82,17 +83,21 @@
               <a-badge primary state="caution" size="small" class="me-3"></a-badge>
             </div>
           </div>
-          <transition-group name="list">
-            <a-dashboard-card v-for="(toDo,index) in inProgressBank" :key="toDo.id">
+          <transition-group name="listings">
+            <a-card v-for="(toDo,index) in inProgressBank" :key="toDo.id" action>
+              <template #confirmation>
+                <div class="fw-bold">Task Completed</div>
+                <div class="confirm-result-icon"><a-icon icon="adhara-success" class="text-success icon-md" /></div>
+              </template>              
               <template #header>
                 <a-badge primary @click="addToCompletedBank(toDo, index)">{{ toDo.curr }}</a-badge>
                 <a-badge dark>{{ toDo.obligation }}</a-badge>
                 <span class="fw-bolder" :id="toDo.id">{{ toDo.entity }}</span>
                 <a-badge primary state="success" icon-right="check-circle" class="ms-auto">{{ toDo.progress }}</a-badge>
               </template>
-              <template #body>
+       
                 <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
-                <div class="card-text toggle-me">
+                <div class="card-text toggle-info">
                   <div class="data-row">
                     <div>{{ toDo.date }} {{ toDo.time }}</div>          
                   </div>
@@ -125,14 +130,14 @@
                   <a-input label="ID Account" id="idAccount" placeholder="Enter ID Account" />
                 </Modal>
                     
-              </template>
-            </a-dashboard-card>
+  
+            </a-card>
           </transition-group>
         </div>
 
 
 
-        <div class="cols">
+        <div class="cols position-relative">
           <div class="d-flex mb-4">
             <div>
               <div class="display-8 fw-bolder">Completed</div>
@@ -143,17 +148,21 @@
             </div>
           </div>
 
-          <transition-group name="list">
-            <a-dashboard-card v-for="(toDo,index) in completedBank" :key="toDo.id" actionIcon>
+          <transition-group name="listings">
+            <a-card v-for="(toDo,index) in completedBank" :key="toDo.id" actionIcon action>
+              <template #confirmation>
+                <div class="fw-bold">Task Completed</div>
+                <div class="confirm-result-icon"><a-icon icon="adhara-success" class="text-success icon-md" /></div>
+              </template>              
               <template #header>
                 <a-badge primary @click="removeFromLists(index)">{{ toDo.curr }}</a-badge>
                 <a-badge dark>{{ toDo.obligation }}</a-badge>
                 <span class="fw-bolder" :id="toDo.id">{{ toDo.entity }}</span>
                 <a-badge primary state="success" icon-right="check-circle" class="ms-auto">Completed</a-badge>
               </template>
-              <template #body>
-                <h5 class="card-title">{{ toDo.total.toLocaleString() }}</h5>
-                <div class="card-text toggle-me">
+          
+                <h5 class="card-title pointer" @click="toggleCardText(toDo, index)" >{{ toDo.total.toLocaleString() }}</h5>
+                <div class="card-text toggle-info" :class="{ 'active-toggle': toDo.toggleText }">
                   <div class="data-row">
                     <div>{{ toDo.date }} {{ toDo.time }}</div>          
                   </div>
@@ -186,8 +195,8 @@
                   <a-input label="ID Account" id="idAccount" placeholder="Enter ID Account" />
                 </Modal>
                     
-              </template>
-            </a-dashboard-card>
+   
+            </a-card>
           </transition-group>
 
 

@@ -1,0 +1,7 @@
+<div class="form-check" :class="{'checked': checked, 'unchecked': !checked, 'disabled': disabled}">
+    <label :for="fieldId" class="form-check-label" :class="{'disabled': disabled}">
+        <input @input="(event) => $emit('update:checked', event.target.checked)" type="checkbox" :checked="checked"
+        :id="fieldId" class="form-check-input" :value="fieldValue" :disabled="disabled" />        
+        {{ label }}
+    </label>
+</div>

@@ -1,0 +1,115 @@
+<div class="badges-view">
+
+  <div class="container-xxl pt-1 pt-md-4">
+    <p class="display-4">{{ $route.meta.title }}</p>
+    <p class="mt-5">
+      <span class="text-primary">Cards</span> are styled containers relating to a single topic that display content and actions.
+      They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+    </p>
+  </div>
+
+  <div class="container-xxl pt-5">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-lg-3 g-4 g-xl-7">
+      <div class="col">
+        <a-card title="Contained" icon="arrows-collapse" intro class="primary" hover>
+          <p class="card-text">A card is identifiable as a single, contained unit.
+          </p>
+        </a-card>
+      </div>
+      <div class="col">
+        <a-card title="Independent" icon="eye" intro class="primary" hover>
+          <p class="card-text">A card can stand alone, without relying on surrounding elements for context.
+          </p>
+        </a-card>
+      </div>      
+      <div class="col">
+        <a-card title="Individual" icon="check-square" intro class="primary" hover>
+          <p class="card-text">Cards should stand as individual containes and should not merge with another card, or be divided into multiple cards.</p>
+        </a-card>
+      </div>
+    </div>
+
+    <div class="row mt-6">
+      <div class="col">
+        <Tabs sticky id="cardTabs">
+          <Tab title="Default Card" class="fade-in">
+            <card-default />
+          </Tab>
+          <Tab title="Action Card" class="fade-in">
+            <card-action />
+          </Tab>
+          <Tab title="Balance Card" class="fade-in">
+            <card-balance />
+          </Tab>          
+          <Tab title="Intro Card" class="fade-in">
+            <card-intro />
+          </Tab>          
+        </Tabs>
+      </div>
+    </div>
+
+
+    <div class="row mt-6">
+      <div class="col">
+        <a-card title="Options">
+          <div class="table-responsive mt-5">
+            <table class="table table-bordered table-hover mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" class="col">Name</th>
+                  <th scope="col" class="col">Type</th>
+                  <th scope="col" class="col-auto">Description</th>
+                  <th scope="col" class="col">Accepted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>action</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set card to an action card</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>balance</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set card to an balance card</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>
+                <tr>
+                  <td><code>intro</code></td>
+                  <td>Boolean</td>
+                  <td class="text-nowrap">Will set card to an intro card</td>
+                  <td class="text-nowrap"><span class="text-primary">false</span>, true</td>
+                </tr>                               
+                <tr>
+                  <td><code>hover</code></td>
+                  <td>String</td>
+                  <td>Will add a hover animation to the card.</td>
+                  <td><span class="text-primary">zoom-in</span>, 'coming soon...'</td>
+                </tr> 
+                <tr>
+                  <td><code>animate</code></td>
+                  <td>Boolean</td>
+                  <td>Animate card when it appears</td>
+                  <td><span class="text-primary">fade-in</span>, 'as per dsl animations page'</td>
+                </tr>
+                <tr>
+                  <td><code>icon</code></td>
+                  <td>String</td>
+                  <td>Will add any of our predefined icons to the card header. E.g. icon="adhara-balances"</td>
+                  <td><span class="text-primary">icon=""</span></td>
+                </tr>               
+              </tbody>
+            </table>
+          </div>
+        </a-card>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <FooterNav prevNav="/components/icons" prevTitle="Icons" nextNav="/components/tooltips" nextTitle="Tooltips"/>
+
+</div>

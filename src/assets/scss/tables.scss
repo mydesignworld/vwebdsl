@@ -64,14 +64,14 @@ thead .text-end .d-flex {
     border-top: 0;
 }
 
-.table tr td:first-child,
-.table tr th:first-child {
-    padding-left: var(--spacer-16);
-}
-
 .table tr td:last-child,
 .table tr th:last-child {
     padding-right: var(--spacer-16);
+}
+
+.table tr th:first-child,
+.table tr td:not(.curr):first-child {
+    padding-left: var(--spacer-16);
 }
 
 .col-sortable span,
@@ -102,8 +102,14 @@ thead .text-end .d-flex {
     stroke-width: 1px;
 }
 
-td .select-box {
+td .select-box,
+td .btn {
     margin: 0;
+}
+
+td .badge,
+td .tooltips {
+    display: revert;
 }
 
 .table-scroll {
@@ -175,13 +181,17 @@ tfoot {
     padding: 28px 4px;
 }
 
-.table-component > .table-actions {
-    margin: -42px 9px 9px 0;
+.table-actions {
+    margin: -12px 12px -16px 0;
     text-align: right;
 }
 
+.table-component > .table-actions {
+    margin: -42px -8px 9px 0;
+}
+
 .table-component > .table-actions.scroll-actions {
-    margin-right: 25px;
+    margin-right: 8px;
 }
 
 .table-component > .table-load {
@@ -218,14 +228,14 @@ tfoot {
     padding-right: .25rem;
 }
 
-.tiles .card.table-card.table-blocks {
+.card.table-card.table-blocks {
     display: flex;
     border: 0;
     background-color: transparent;
     box-shadow: none;
 }
 
-.tiles .card.table-card.table-blocks .card-body {
+.card.table-card.table-blocks .card-body {
     padding: 0;
 }
 

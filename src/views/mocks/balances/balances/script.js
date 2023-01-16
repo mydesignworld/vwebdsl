@@ -1,5 +1,5 @@
 import ADropDown    from '@/components/drop-down/';
-import Card         from '@/components/card/';
+import ACard        from '@/components/card/';
 import options      from '../mixins/options';
 
 export default {
@@ -7,6 +7,6 @@ export default {
     mixins     : [ options ],
     components : {
         ADropDown,
-        Card
+        ACard
     }
 };

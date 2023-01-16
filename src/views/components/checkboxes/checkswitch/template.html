@@ -1,0 +1,110 @@
+<div class="checkbox-view">
+  <div class="row mt-2">
+    <div class="col">
+      <div class="table-hold">
+        <a-card title="Preview">
+          <div class="text-end mt-n5">
+            <span class="hold-pop-over">
+              <a-icon class="text-primary display-5 dropdown-toggle pointer" icon="gear" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" aria-expanded="false" data-bs-offset="0,8" />
+              <div class="dropdown-menu">
+                <a-card title="Settings">
+                  <div class="row mt-3">
+                    <div class="col">
+                      <a-checkbox switch v-model:value="settingsSelected" :options="settingsOptions" id="settingsId"
+                        @input="_checkboxSettings(settingsSelected)" />
+                    </div>
+                  </div>
+                </a-card>
+              </div>
+            </span>
+          </div>
+          <div class="mb-0 mt-5">
+            <a-checkbox switch v-model:value="optionsSelected" :options="options" :inline="inlineSelect"
+              :single="single" id="optionsId" />
+          </div>
+        </a-card>
+      </div>
+    </div>
+  </div>
+
+  <CardCode>
+    <textarea class="form-control" rows="3">
+<!-- Within your code: -->
+<a-checkbox switch single v-model:value="[...]" :options="[...]" id="idOne" />
+
+<!-- Will output: -->
+<div class="checkbox-hold">
+  <div class="form-check unchecked form-switch" id="optionsId">
+    <label for="optionsId-0-Option One" class="form-check-label">
+      <input type="checkbox" id="optionsId-0-Option One" class="form-check-input">
+      Option One
+    </label>
+  </div>
+  <div class="form-check checked form-switch" id="optionsId">
+    <label for="optionsId-1-Option Two" class="form-check-label">
+      <input type="checkbox" id="optionsId-1-Option Two" class="form-check-input">
+      Option Two
+    </label>
+  </div>
+  <div class="form-check unchecked form-switch" id="optionsId">
+    <label for="optionsId-2-Option Three"
+      class="form-check-label">
+      <input type="checkbox" id="optionsId-2-Option Three" class="form-check-input">
+      Option Three
+    </label>
+  </div>
+</div>
+</textarea>
+  </CardCode>
+
+  <div class="row mt-6">
+    <div class="col">
+      <a-card title="Formats">
+        <div class="row mb-4 mt-5">
+          <div class="col-12 col-sm-5 col-md-6 col-lg-4 col-xl-3 col-xxl-2 order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0 mt-1">
+              <a-checkbox switch v-model:value="standardSelected" :options="standardOptions" id="standardSelected" />
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-2a mb-sm-0">Standard State</h5>
+          </div>
+        </div>
+
+        <div class="row mb-4 mt-5">
+          <div class="col-12 col-sm-5 col-md-6 col-lg-4 col-xl-3 col-xxl-2 order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0 mt-1">
+              <a-checkbox switch v-model:value="selectedSelected" :options="selectedOptions" id="selectedSelected" />
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-2a mb-sm-0">Selected State</h5>
+          </div>
+        </div>
+
+        <div class="row mb-4 mt-5">
+          <div class="col-12 col-sm-5 col-md-6 col-lg-4 col-xl-3 col-xxl-2 order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0 mt-1">
+              <a-checkbox switch v-model:value="disabledSelected" :options="disabledOptions" id="disabledSelected" />
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-2a mb-sm-0">Disabled State</h5>
+          </div>
+        </div>        
+
+        <div class="row mb-4 mt-5">
+          <div class="col-12 col-sm-5 col-md-6 col-lg-4 col-xl-3 col-xxl-2 order-2 order-sm-1 align-self-center">
+            <div class="input-wrapper mb-0 mt-1">
+              <a-checkbox switch v-model:value="disabledActiveSelected" :options="disabledActiveOptions" id="disabledActiveSelected" />
+            </div>
+          </div>
+          <div class="col order-1 order-sm-2 align-self-center">
+            <h5 class="mb-2a mb-sm-0">Disabled Selected State</h5>
+          </div>
+        </div>
+      </a-card>
+    </div>
+  </div>
+</div>

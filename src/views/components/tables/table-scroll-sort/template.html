@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="table-hold">
-        <Card class="table-card fade-in">
+        <a-card animate>
           <a-table :headers="columnsmax" :rows="items" :sort="sort" responsive scrollable hover>
             <template v-slot:table-actions>
               <a-button secondary size="small">secondary button</a-button>
@@ -28,7 +28,7 @@
               <a-button primary size="small">Load More</a-button>
             </template>               
           </a-table>
-        </Card>
+        </a-card>
       </div>
     </div>
   </div>
